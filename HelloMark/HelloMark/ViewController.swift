@@ -22,7 +22,7 @@ class ViewController: UIViewController, PNObjectEventListener {
                                     print("published")
                                 }
                                 else{
-                                    print("Error")
+                                    print(status.errorData)
                                     /**
                                      Handle message publish error. Check 'category' property to find
                                      out possible reason because of which request did fail.
@@ -38,6 +38,8 @@ class ViewController: UIViewController, PNObjectEventListener {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let configuration = PNConfiguration(publishKey: "pub-c-73cca4b9-e219-4f94-90fc-02dd8f018045", subscribeKey: "sub-c-383332aa-dcc0-11e6-b6b1-02ee2ddab7fe")
+        self.client = PubNub.clientWithConfiguration(configuration)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
