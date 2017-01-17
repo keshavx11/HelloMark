@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-HelloMark.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-HelloMarkTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-HelloMarkUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PubNub.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>222DAF4E5791429C4F01FC737B7E0C64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2C129200C781A4C1105EAA7E026AF11C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A82FF5EA3C4F5AF8B4B363343413460F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DEC2F40D63BBF950622F13030D636803</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

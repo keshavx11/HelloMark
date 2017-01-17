@@ -1,0 +1,6 @@
+framework module Pods_HelloMark {
+  umbrella header "Pods-HelloMark-umbrella.h"
+
+  export *
+  module * { export * }
+}
