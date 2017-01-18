@@ -14,9 +14,14 @@ class ViewController: UIViewController, PNObjectEventListener {
     var client: PubNub!
 
     @IBAction func publish(_ sender: Any) {
+        let publishJSON: NSDictionary = ["place": "bedroom",
+                                         "device": "light",
+                                         "state": false
+        ]
         print("publishing..")
-        self.client.publish("Something", toChannel: "switch",
+        self.client.publish(publishJSON, toChannel: "switch",
                             compressed: false, withCompletion: { (status) in
+                                
                                 
                                 if !status.isError {
                                     print("published")
