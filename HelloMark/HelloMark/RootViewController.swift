@@ -15,11 +15,29 @@ class RootViewController: UICollectionViewController, UICollectionViewDelegateFl
     let deviceReuseIdentifier = "DeviceCell"
     var items = ["1", "2", "3", "4"]
     
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        screenSize = UIScreen.main.bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        
+        // Do any additional setup after loading the view, typically from a nib
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: screenWidth / 3, height: screenWidth / 3)
+        self.collectionView?.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
+    }
     
     // MARK: - UICollectionViewDataSource protocol
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 2
     }
+    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
@@ -39,7 +57,10 @@ class RootViewController: UICollectionViewController, UICollectionViewDelegateFl
         case 0:
             // get a reference to our storyboard cell
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
-            
+            cell.layer.borderColor = UIColor.black.cgColor
+            cell.layer.borderWidth = 0.5
+//            cell.frame.size.width = screenWidth/1.5
+//            cell.frame.size.height = screenWidth/1.5
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
             cell.roomName.text = self.items[indexPath.item]
             return cell
@@ -76,7 +97,7 @@ class RootViewController: UICollectionViewController, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         switch section {
         case 0:
-            return UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
+            return UIEdgeInsetsMake(50.0, 50.0, 50.0, 50.0)
         case 1:
             return UIEdgeInsetsMake(0.0, 20.0, 20.0, 20.0)
         default:
