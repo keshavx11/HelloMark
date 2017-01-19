@@ -10,6 +10,9 @@
 		102C3FBF157D5E396B6E07AF /* Pods_HelloMarkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7432D6290A8CBF707DF2466 /* Pods_HelloMarkUITests.framework */; };
 		642A628D47FAACF270D8BC77 /* Pods_HelloMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A794B8F259CF670444DAF5 /* Pods_HelloMark.framework */; };
 		BCD48C7E82A8C91B8393B501 /* Pods_HelloMarkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A316A73CC04A0BC5E9E65782 /* Pods_HelloMarkTests.framework */; };
+		E1C7BB571E2F5F64009CE875 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C7BB561E2F5F64009CE875 /* RootViewController.swift */; };
+		E1C7BB5D1E2F68D1009CE875 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C7BB5C1E2F68D1009CE875 /* CollectionViewCell.swift */; };
+		E1C7BB5F1E2F6CA1009CE875 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C7BB5E1E2F6CA1009CE875 /* DeviceCell.swift */; };
 		E1F2EF8E1E2E814700A7DF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2EF8D1E2E814700A7DF56 /* AppDelegate.swift */; };
 		E1F2EF901E2E814700A7DF56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2EF8F1E2E814700A7DF56 /* ViewController.swift */; };
 		E1F2EF931E2E814800A7DF56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F2EF911E2E814800A7DF56 /* Main.storyboard */; };
@@ -44,6 +47,9 @@
 		B5A794B8F259CF670444DAF5 /* Pods_HelloMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7432D6290A8CBF707DF2466 /* Pods_HelloMarkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloMarkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C81B5642E50A20F05AB70E /* Pods-HelloMark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloMark.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloMark/Pods-HelloMark.release.xcconfig"; sourceTree = "<group>"; };
+		E1C7BB561E2F5F64009CE875 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		E1C7BB5C1E2F68D1009CE875 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		E1C7BB5E1E2F6CA1009CE875 /* DeviceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		E1F2EF8A1E2E814700A7DF56 /* HelloMark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloMark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F2EF8D1E2E814700A7DF56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1F2EF8F1E2E814700A7DF56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				E1F2EF8D1E2E814700A7DF56 /* AppDelegate.swift */,
+				E1C7BB561E2F5F64009CE875 /* RootViewController.swift */,
+				E1C7BB5C1E2F68D1009CE875 /* CollectionViewCell.swift */,
+				E1C7BB5E1E2F6CA1009CE875 /* DeviceCell.swift */,
 				E1F2EF8F1E2E814700A7DF56 /* ViewController.swift */,
 				E1F2EF911E2E814800A7DF56 /* Main.storyboard */,
 				E1F2EF941E2E814800A7DF56 /* Assets.xcassets */,
@@ -451,6 +460,9 @@
 			files = (
 				E1F2EF901E2E814700A7DF56 /* ViewController.swift in Sources */,
 				E1F2EF8E1E2E814700A7DF56 /* AppDelegate.swift in Sources */,
+				E1C7BB5D1E2F68D1009CE875 /* CollectionViewCell.swift in Sources */,
+				E1C7BB5F1E2F6CA1009CE875 /* DeviceCell.swift in Sources */,
+				E1C7BB571E2F5F64009CE875 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,15 +9,24 @@
 import UIKit
 import PubNub
 
+
 class ViewController: UIViewController, PNObjectEventListener {
     
     var client: PubNub!
 
     @IBAction func publish(_ sender: Any) {
-        let publishJSON: NSDictionary = ["place": "bedroom",
+        var publishJSON: NSDictionary!
+        if (sender as AnyObject).tag == 1{
+        publishJSON = ["place": "bedroom",
                                          "device": "light",
-                                         "state": false
+                                         "state": true
         ]
+        }else if (sender as AnyObject).tag == 2{
+        publishJSON = ["place": "bedroom",
+                                             "device": "light",
+                                             "state": false
+            ]
+        }
         print("publishing..")
         self.client.publish(publishJSON, toChannel: "switch",
                             compressed: false, withCompletion: { (status) in
