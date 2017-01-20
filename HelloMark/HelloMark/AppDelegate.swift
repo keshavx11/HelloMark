@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import ApiAI
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let apiai = ApiAI.shared()!
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-         configureNavigationTabBar()
+        let configuration: AIConfiguration = AIDefaultConfiguration()
+            
+            configuration.clientAccessToken = "3e88fac3a4f14428b4ad2eea79eda44e"
+            
+            apiai.configuration = configuration
+            
         return true
     }
 

@@ -1,7 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "PNAPNSModificationAPICallBuilder.h"
-#import "PNAPNSAuditAPICallBuilder.h"
-#import "PNAPNSAPICallBuilder.h"
 #import "PubNub+Core.h"
 
 
@@ -11,6 +8,28 @@
 
 
 NS_ASSUME_NONNULL_BEGIN
+
+#pragma mark - Types
+
+/**
+ @brief  Push notifications state modification completion block.
+ 
+ @param status Reference on status instance which hold information about processing results.
+ 
+ @since 4.0
+ */
+typedef void(^PNPushNotificationsStateModificationCompletionBlock)(PNAcknowledgmentStatus *status);
+
+/**
+ @brief  Push notifications state audit completion block.
+ 
+ @param status Reference on status instance which hold information about processing results.
+ 
+ @since 4.0
+ */
+typedef void(^PNPushNotificationsStateAuditCompletionBlock)(PNAPNSEnabledChannelsResult * _Nullable result,
+                                                            PNErrorStatus * _Nullable status);
+
 
 #pragma mark - API group interface
 
@@ -25,20 +44,6 @@ NS_ASSUME_NONNULL_BEGIN
  @copyright © 2009-2016 PubNub, Inc.
  */
 @interface PubNub (APNS)
-
-
-///------------------------------------------------
-/// @name API Builder support
-///------------------------------------------------
-
-/**
- @brief      Stores reference on push notification API access \c builder construction block.
- @discussion On block call return builder which allow to configure parameters for push API access and data 
-             manipulation.
- 
- @since 4.5.4
- */
-@property (nonatomic, readonly, strong) PNAPNSAPICallBuilder *(^push)(void);
 
 
 ///------------------------------------------------
@@ -83,7 +88,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)addPushNotificationsOnChannels:(NSArray<NSString *> *)channels withDevicePushToken:(NSData *)pushToken
-                         andCompletion:(nullable PNPushNotificationsStateModificationCompletionBlock)block NS_SWIFT_NAME(addPushNotificationsOnChannels(_:withDevicePushToken:andCompletion:));
+                         andCompletion:(nullable PNPushNotificationsStateModificationCompletionBlock)block;
 
 /**
  @brief      Disable push notifications on provided set of \c channels.
@@ -124,7 +129,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  */
 - (void)removePushNotificationsFromChannels:(NSArray<NSString *> *)channels
                         withDevicePushToken:(NSData *)pushToken
-                              andCompletion:(nullable PNPushNotificationsStateModificationCompletionBlock)block NS_SWIFT_NAME(removePushNotificationsFromChannels(_:withDevicePushToken:andCompletion:));
+                              andCompletion:(nullable PNPushNotificationsStateModificationCompletionBlock)block;
 
 /**
  @brief      Disable push notifications from all channels which is registered with specified \c pushToken.
@@ -163,7 +168,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)removeAllPushNotificationsFromDeviceWithPushToken:(NSData *)pushToken
-                           andCompletion:(nullable PNPushNotificationsStateModificationCompletionBlock)block NS_SWIFT_NAME(removeAllPushNotificationsFromDeviceWithPushToken(_:andCompletion:));
+                           andCompletion:(nullable PNPushNotificationsStateModificationCompletionBlock)block;
 
 
 ///------------------------------------------------
@@ -208,7 +213,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)pushNotificationEnabledChannelsForDeviceWithPushToken:(NSData *)pushToken
-                                  andCompletion:(PNPushNotificationsStateAuditCompletionBlock)block NS_SWIFT_NAME(pushNotificationEnabledChannelsForDeviceWithPushToken(_:andCompletion:));
+                                  andCompletion:(PNPushNotificationsStateAuditCompletionBlock)block;
 
 #pragma mark -
 

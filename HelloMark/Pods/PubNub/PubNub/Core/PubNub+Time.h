@@ -1,5 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "PNTimeAPICallBuilder.h"
 #import "PubNub+Core.h"
 
 
@@ -9,6 +8,19 @@
 
 
 NS_ASSUME_NONNULL_BEGIN
+
+#pragma mark - Types
+
+/**
+ @brief  Time request completion block.
+ 
+ @param result Reference on result object which describe service response on time request.
+ @param status Reference on status instance which hold information about processing results.
+ 
+ @since 4.0
+ */
+typedef void(^PNTimeCompletionBlock)(PNTimeResult * _Nullable result, PNErrorStatus * _Nullable status);
+
 
 #pragma mark - API group interface
 
@@ -20,19 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
  @copyright © 2009-2016 PubNub, Inc.
  */
 @interface PubNub (Time)
-
-
-///------------------------------------------------
-/// @name API Builder support
-///------------------------------------------------
-
-/**
- @brief      Stores reference on time API access \c builder construction block.
- @discussion On block call return builder which allow to configure parameters for time API access.
- 
- @since 4.5.4
- */
-@property (nonatomic, readonly, strong) PNTimeAPICallBuilder *(^time)(void);
 
 
 ///------------------------------------------------
@@ -71,7 +70,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)timeWithCompletion:(PNTimeCompletionBlock)block NS_SWIFT_NAME(timeWithCompletion(_:));
+- (void)timeWithCompletion:(PNTimeCompletionBlock)block;
 
 #pragma mark -
 

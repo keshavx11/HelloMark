@@ -15,10 +15,10 @@
 #pragma mark General information constants
 
 // Stores client library version number
-static NSString * const kPNLibraryVersion = @"4.5.11";
+static NSString * const kPNLibraryVersion = @"4.5.2";
 
 // Stores information about SDK codebase
-static NSString * const kPNCommit = @"d0e711e9a3f6c2aa267f113439830f920db60114";
+static NSString * const kPNCommit = @"2c8d262e86b400142310a6c37db80f71dc41e497";
 
 /**
  @brief  Stores reference on unique identifier which is used to identify \b PubNub client among other 
@@ -28,15 +28,13 @@ static NSString * const kPNCommit = @"d0e711e9a3f6c2aa267f113439830f920db60114";
  */
 static NSString * const kPNClientIdentifier = @"com.pubnub.pubnub-objc";
 
-#if TARGET_OS_IOS
-    static NSString * const kPNClientName = @"ObjC-iOS";
-#elif TARGET_OS_WATCH
+#if TARGET_OS_WATCH
     static NSString * const kPNClientName = @"ObjC-watchOS";
-#elif TARGET_OS_TV
-    static NSString * const kPNClientName = @"ObjC-tvOS";
-#elif TARGET_OS_OSX
-    static NSString * const kPNClientName = @"ObjC-macOS";
-#endif // TARGET_OS_OSX
+#elif __IPHONE_OS_VERSION_MIN_REQUIRED
+    static NSString * const kPNClientName = @"ObjC-iOS";
+#elif __MAC_OS_X_VERSION_MIN_REQUIRED
+    static NSString * const kPNClientName = @"ObjC-MacOS";
+#endif // __MAC_OS_X_VERSION_MIN_REQUIRED
 
 
 #pragma mark - Default client configuration
@@ -49,12 +47,11 @@ static NSTimeInterval const kPNDefaultNonSubscribeRequestTimeout = 10.0f;
 static BOOL const kPNDefaultIsTLSEnabled = YES;
 static PNHeartbeatNotificationOptions const kPNDefaultHeartbeatNotificationOptions = PNHeartbeatNotifyFailure;
 static BOOL const kPNDefaultShouldKeepTimeTokenOnListChange = YES;
+static BOOL const kPNDefaultShouldRestoreSubscription = YES;
 static BOOL const kPNDefaultShouldTryCatchUpOnSubscriptionRestore = YES;
-static BOOL const kPNDefaultRequestMessageCountThreshold = 0;
-static BOOL const kPNDefaultMaximumMessagesCacheSize = 100;
-#if TARGET_OS_IOS
+#if __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
 static BOOL const kPNDefaultShouldCompleteRequestsBeforeSuspension = YES;
-#endif // TARGET_OS_IOS
+#endif // __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
 static BOOL const kPNDefaultShouldStripMobilePayload = YES;
 
 #endif // PNConstants_h

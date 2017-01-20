@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Information
 
-@property (nonatomic, strong) NSDictionary<NSString *, id> *serviceData;
+@property (nonatomic, copy) NSDictionary<NSString *, id> *serviceData;
 
 
 #pragma mark - Initialization and Configuration
@@ -58,7 +58,6 @@ NS_ASSUME_NONNULL_END
     if ((self = [super init])) {
         
         self.serviceData = (response?: @{});
-        if (![response isKindOfClass:[NSDictionary class]]) { self.serviceData = @{@"information": response}; }
     }
     
     return self;

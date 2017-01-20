@@ -1,14 +1,30 @@
 PODS:
-  - PubNub (4.5.11):
-    - PubNub/Core (= 4.5.11)
-  - PubNub/Core (4.5.11)
+  - ApiAI/Core (0.5.5)
+  - ApiAI/ResponseMapping (0.5.5):
+    - ApiAI/Core
+  - ApiAI/UIKit (0.5.5):
+    - ApiAI/Core
+    - ApiAI/VoiceRequest
+  - ApiAI/VoiceRequest (0.5.5):
+    - ApiAI/Core
+  - MBProgressHUD (1.0.0)
+  - PubNub (4.5.2):
+    - PubNub/Core (= 4.5.2)
+  - PubNub/Core (4.5.2)
 
 DEPENDENCIES:
-  - PubNub (~> 4.5)
+  - ApiAI/Core
+  - ApiAI/ResponseMapping
+  - ApiAI/UIKit
+  - ApiAI/VoiceRequest
+  - MBProgressHUD
+  - PubNub
 
 SPEC CHECKSUMS:
-  PubNub: bf767a13b65f0492f8a2f141d6af27d1e8746f2b
+  ApiAI: f812efe6bff8b6d980b15ffd40c3e74ae8f467c4
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  PubNub: 1b6da1bb6a971214ab9fb42e40aed23f77438d26
 
-PODFILE CHECKSUM: 419abfc7e5d61cfd6ce57eb9530feaeb44fa6e8c
+PODFILE CHECKSUM: 91386cadd280d7eb3f11db0c153253cdc3518475
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.0.1

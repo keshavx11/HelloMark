@@ -4,15 +4,15 @@
  @copyright © 2009-2016 PubNub, Inc.
  */
 #import <Foundation/Foundation.h>
-#if TARGET_OS_IOS
+#if __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
     #import <UIKit/UIKit.h>
-#elif TARGET_OS_OSX
+#elif __MAC_OS_X_VERSION_MIN_REQUIRED
     #import <IOKit/IOKitLib.h>
     #include <sys/socket.h>
     #include <sys/sysctl.h>
     #include <net/if.h>
     #include <net/if_dl.h>
-#endif // TARGET_OS_OSX
+#endif // __MAC_OS_X_VERSION_MIN_REQUIRED
 #import "PNConfiguration.h"
 #import "PNConstants.h"
 #import "PNKeychain.h"
@@ -70,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable NSString *)generateUniqueDeviceIdentifier;
 
-#if TARGET_OS_OSX
+#if __MAC_OS_X_VERSION_MIN_REQUIRED
 /**
  @brief  Try to fetch device serial number information.
  
@@ -88,7 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
  @since 4.0.2
  */
 - (nullable NSString *)macAddress;
-#endif // TARGET_OS_OSX
+#endif
 
 #pragma mark -
 
@@ -132,7 +132,7 @@ NS_ASSUME_NONNULL_END
         
         _deviceID = [[self uniqueDeviceIdentifier] copy];
         // In case if we client used from tests environment configuration should use specified
-        // device and instance identifier.
+        // device identifier.
         if (NSClassFromString(@"XCTestExpectation")) {
             
             _deviceID = [@"3650F534-FC54-4EE8-884C-EF1B83188BB7" copy];
@@ -146,12 +146,11 @@ NS_ASSUME_NONNULL_END
         _TLSEnabled = kPNDefaultIsTLSEnabled;
         _heartbeatNotificationOptions = kPNDefaultHeartbeatNotificationOptions;
         _keepTimeTokenOnListChange = kPNDefaultShouldKeepTimeTokenOnListChange;
+        _restoreSubscription = kPNDefaultShouldRestoreSubscription;
         _catchUpOnSubscriptionRestore = kPNDefaultShouldTryCatchUpOnSubscriptionRestore;
-        _requestMessageCountThreshold = kPNDefaultRequestMessageCountThreshold;
-        _maximumMessagesCacheSize = kPNDefaultMaximumMessagesCacheSize;
-#if TARGET_OS_IOS
+#if __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
         _completeRequestsBeforeSuspension = kPNDefaultShouldCompleteRequestsBeforeSuspension;
-#endif // TARGET_OS_IOS
+#endif // __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
         _stripMobilePayload = kPNDefaultShouldStripMobilePayload;
     }
     
@@ -175,13 +174,11 @@ NS_ASSUME_NONNULL_END
     configuration.TLSEnabled = self.isTLSEnabled;
     configuration.heartbeatNotificationOptions = self.heartbeatNotificationOptions;
     configuration.keepTimeTokenOnListChange = self.shouldKeepTimeTokenOnListChange;
+    configuration.restoreSubscription = self.shouldRestoreSubscription;
     configuration.catchUpOnSubscriptionRestore = self.shouldTryCatchUpOnSubscriptionRestore;
-    configuration.applicationExtensionSharedGroupIdentifier = self.applicationExtensionSharedGroupIdentifier;
-    configuration.requestMessageCountThreshold = self.requestMessageCountThreshold;
-    configuration.maximumMessagesCacheSize = self.maximumMessagesCacheSize;
-#if TARGET_OS_IOS
+#if __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
     configuration.completeRequestsBeforeSuspension = self.shouldCompleteRequestsBeforeSuspension;
-#endif // TARGET_OS_IOS
+#endif // __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
     configuration.stripMobilePayload = self.shouldStripMobilePayload;
     
     return configuration;
@@ -210,16 +207,16 @@ NS_ASSUME_NONNULL_END
 - (NSString *)generateUniqueDeviceIdentifier {
     
     NSString *identifier = nil;
-#if TARGET_OS_IOS
+#if __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
     identifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-#elif TARGET_OS_OSX
+#elif __MAC_OS_X_VERSION_MIN_REQUIRED
     identifier = ([self serialNumber]?: [self macAddress]);
-#endif // TARGET_OS_OSX
+#endif
     
     return (identifier?: [[[NSUUID UUID] UUIDString] copy]);
 }
 
-#if TARGET_OS_OSX
+#if __MAC_OS_X_VERSION_MIN_REQUIRED
 - (NSString *)serialNumber {
     
     NSString *serialNumber = nil;
@@ -259,7 +256,7 @@ NS_ASSUME_NONNULL_END
     
     return macAddress;
 }
-#endif // TARGET_OS_OSX
+#endif
 
 #pragma mark -
 

@@ -1,7 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "PNStreamModificationAPICallBuilder.h"
-#import "PNStreamAuditAPICallBuilder.h"
-#import "PNStreamAPICallBuilder.h"
 #import "PubNub+Core.h"
 
 
@@ -11,6 +8,40 @@
 
 
 NS_ASSUME_NONNULL_BEGIN
+
+#pragma mark - Types
+
+/**
+ @brief  Channel groups list audition completion block.
+ 
+ @param result Reference on result object which describe service response on audition request.
+ @param status Reference on status instance which hold information about processing results.
+ 
+ @since 4.0
+ */
+typedef void(^PNGroupAuditCompletionBlock)(PNChannelGroupsResult * _Nullable result, 
+                                           PNErrorStatus * _Nullable status);
+
+/**
+ @brief  Channel group channels list audition completion block.
+ 
+ @param result Reference on result object which describe service response on audition request.
+ @param status Reference on status instance which hold information about processing results.
+ 
+ @since 4.0
+ */
+typedef void(^PNGroupChannelsAuditCompletionBlock)(PNChannelGroupChannelsResult * _Nullable result,
+                                                   PNErrorStatus * _Nullable status);
+
+/**
+ @brief  Channel group content modification completion block.
+ 
+ @param status Reference on status instance which hold information about processing results.
+ 
+ @since 4.0
+ */
+typedef void(^PNChannelGroupChangeCompletionBlock)(PNAcknowledgmentStatus *status);
+
 
 #pragma mark - API group interface
 
@@ -24,20 +55,6 @@ NS_ASSUME_NONNULL_BEGIN
  @copyright © 2009-2016 PubNub, Inc.
  */
 @interface PubNub (ChannelGroup)
-
-
-///------------------------------------------------
-/// @name API Builder support
-///------------------------------------------------
-
-/**
- @brief      Retrieve reference on stream API access builder.
- @discussion On block call return builder which allow to configure parameters for stream API access and data 
-             manipulation.
- 
- @since 4.5.4
- */
-@property (nonatomic, readonly, strong) PNStreamAPICallBuilder *(^stream)(void);
 
 
 ///------------------------------------------------
@@ -116,7 +133,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)channelsForGroup:(NSString *)group withCompletion:(PNGroupChannelsAuditCompletionBlock)block NS_SWIFT_NAME(channelsForGroup(_:withCompletion:));
+- (void)channelsForGroup:(NSString *)group withCompletion:(PNGroupChannelsAuditCompletionBlock)block;
 
 
 ///------------------------------------------------
@@ -161,7 +178,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)addChannels:(NSArray<NSString *> *)channels toGroup:(NSString *)group
-     withCompletion:(nullable PNChannelGroupChangeCompletionBlock)block NS_SWIFT_NAME(addChannels(_:toGroup:withCompletion:));
+     withCompletion:(nullable PNChannelGroupChangeCompletionBlock)block;
 
 /**
  @brief      Remove specified \c channels from \c group.
@@ -201,7 +218,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)removeChannels:(NSArray<NSString *> *)channels fromGroup:(NSString *)group
-        withCompletion:(nullable PNChannelGroupChangeCompletionBlock)block NS_SWIFT_NAME(removeChannels(_:fromGroup:withCompletion:));
+        withCompletion:(nullable PNChannelGroupChangeCompletionBlock)block;
 
 /**
  @brief      Remove all channels from \c group.
@@ -239,7 +256,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */ 
 - (void)removeChannelsFromGroup:(NSString *)group
-                 withCompletion:(nullable PNChannelGroupChangeCompletionBlock)block NS_SWIFT_NAME(removeChannelsFromGroup(_:withCompletion:));
+                 withCompletion:(nullable PNChannelGroupChangeCompletionBlock)block;
 
 #pragma mark -
 

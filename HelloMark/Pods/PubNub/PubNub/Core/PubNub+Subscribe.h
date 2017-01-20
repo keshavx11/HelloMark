@@ -1,8 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "PNUnsubscribeChannelsOrGroupsAPICallBuilder.h"
-#import "PNSubscribeChannelsOrGroupsAPIBuilder.h"
-#import "PNUnsubscribeAPICallBuilder.h"
-#import "PNSubscribeAPIBuilder.h"
 #import "PubNub+Core.h"
 
 
@@ -87,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @since 4.0
  */
-- (void)addListener:(id <PNObjectEventListener>)listener NS_SWIFT_NAME(addListener(_:));
+- (void)addListener:(id <PNObjectEventListener>)listener;
 
 /**
  @brief      Remove listener from list for callback calls.
@@ -98,7 +94,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @since 4.0
  */
-- (void)removeListener:(id <PNObjectEventListener>)listener NS_SWIFT_NAME(removeListener(_:));
+- (void)removeListener:(id <PNObjectEventListener>)listener;
 
 
 ///------------------------------------------------
@@ -112,27 +108,6 @@ NS_ASSUME_NONNULL_BEGIN
           presence events from service (only error status).
  */
 @property (nonatomic, nullable, copy) NSString *filterExpression;
-
-
-///------------------------------------------------
-/// @name API Builder support
-///------------------------------------------------
-
-/**
- @brief      Stores reference on subscribe API access \c builder construction block.
- @discussion On block call return builder which allow to configure parameters for subscribe API access.
- 
- @since 4.5.4
- */
-@property (nonatomic, readonly, strong) PNSubscribeAPIBuilder *(^subscribe)(void);
-
-/**
- @brief      Stores reference on unsubscribe API access \c builder construction block.
- @discussion On block call return builder which allow to configure parameters for unsubscribe API access.
- 
- @since 4.5.4
- */
-@property (nonatomic, readonly, strong) PNUnsubscribeAPICallBuilder *(^unsubscribe)(void);
 
 
 ///------------------------------------------------
@@ -157,7 +132,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)subscribeToChannels:(NSArray<NSString *> *)channels withPresence:(BOOL)shouldObservePresence NS_SWIFT_NAME(subscribeToChannels(_:withPresence:));
+- (void)subscribeToChannels:(NSArray<NSString *> *)channels withPresence:(BOOL)shouldObservePresence;
 
 /**
  @brief      Try subscribe on specified set of channels.
@@ -182,7 +157,7 @@ NSNumber *timeToken = @([[NSDate dateWithTimeIntervalSinceNow:-2.0] timeInterval
  @since 4.2.0
  */
 - (void)subscribeToChannels:(NSArray<NSString *> *)channels withPresence:(BOOL)shouldObservePresence
-             usingTimeToken:(nullable NSNumber *)timeToken NS_SWIFT_NAME(subscribeToChannels(_:withPresence:usingTimeToken:));
+             usingTimeToken:(nullable NSNumber *)timeToken;
 
 /**
  @brief      Try subscribe on specified set of channels.
@@ -208,7 +183,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)subscribeToChannels:(NSArray<NSString *> *)channels withPresence:(BOOL)shouldObservePresence
-                clientState:(nullable NSDictionary<NSString *, id> *)state NS_SWIFT_NAME(subscribeToChannels(_:withPresence:clientState:));
+                clientState:(nullable NSDictionary<NSString *, id> *)state;
 
 /**
  @brief      Try subscribe on specified set of channels.
@@ -237,7 +212,7 @@ NSNumber *timeToken = @([[NSDate dateWithTimeIntervalSinceNow:-2.0] timeInterval
  */
 - (void)subscribeToChannels:(NSArray<NSString *> *)channels withPresence:(BOOL)shouldObservePresence
              usingTimeToken:(nullable NSNumber *)timeToken 
-                clientState:(nullable NSDictionary<NSString *, id> *)state NS_SWIFT_NAME(subscribeToChannels(_:withPresence:usingTimeToken:clientState:));
+                clientState:(nullable NSDictionary<NSString *, id> *)state;
 
 /**
  @brief      Try subscribe on specified set of channel groups.
@@ -257,7 +232,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)subscribeToChannelGroups:(NSArray<NSString *> *)groups withPresence:(BOOL)shouldObservePresence NS_SWIFT_NAME(subscribeToChannelGroups(_:withPresence:));
+- (void)subscribeToChannelGroups:(NSArray<NSString *> *)groups withPresence:(BOOL)shouldObservePresence;
 
 /**
  @brief      Try subscribe on specified set of channel groups.
@@ -282,7 +257,7 @@ NSNumber *timeToken = @([[NSDate dateWithTimeIntervalSinceNow:-2.0] timeInterval
  @since 4.2.0
  */
 - (void)subscribeToChannelGroups:(NSArray<NSString *> *)groups withPresence:(BOOL)shouldObservePresence
-                  usingTimeToken:(nullable NSNumber *)timeToken NS_SWIFT_NAME(subscribeToChannelGroups(_:withPresence:usingTimeToken:));
+                  usingTimeToken:(nullable NSNumber *)timeToken;
 
 /**
  @brief      Try subscribe on specified set of channel groups.
@@ -308,7 +283,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)subscribeToChannelGroups:(NSArray<NSString *> *)groups withPresence:(BOOL)shouldObservePresence
-                     clientState:(nullable NSDictionary<NSString *, id> *)state NS_SWIFT_NAME(subscribeToChannelGroups(_:withPresence:clientState:));
+                     clientState:(nullable NSDictionary<NSString *, id> *)state;
 
 /**
  @brief      Try subscribe on specified set of channel groups.
@@ -337,7 +312,7 @@ NSNumber *timeToken = @([[NSDate dateWithTimeIntervalSinceNow:-2.0] timeInterval
  */
 - (void)subscribeToChannelGroups:(NSArray<NSString *> *)groups withPresence:(BOOL)shouldObservePresence
                   usingTimeToken:(nullable NSNumber *)timeToken 
-                     clientState:(nullable NSDictionary<NSString *, id> *)state NS_SWIFT_NAME(subscribeToChannelGroups(_:withPresence:usingTimeToken:clientState:));
+                     clientState:(nullable NSDictionary<NSString *, id> *)state;
 
 /**
  @brief      Enable presence observation on specified \c channels.
@@ -357,7 +332,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)subscribeToPresenceChannels:(NSArray<NSString *> *)channels NS_SWIFT_NAME(subscribeToPresenceChannels(_:));
+- (void)subscribeToPresenceChannels:(NSArray<NSString *> *)channels;
 
 
 ///------------------------------------------------
@@ -383,7 +358,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)unsubscribeFromChannels:(NSArray<NSString *> *)channels withPresence:(BOOL)shouldObservePresence NS_SWIFT_NAME(unsubscribeFromChannels(_:withPresence:));
+- (void)unsubscribeFromChannels:(NSArray<NSString *> *)channels withPresence:(BOOL)shouldObservePresence;
 
 /**
  @brief      Unsubscribe/leave from specified set of channel groups.
@@ -405,7 +380,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)unsubscribeFromChannelGroups:(NSArray<NSString *> *)groups withPresence:(BOOL)shouldObservePresence NS_SWIFT_NAME(unsubscribeFromChannelGroups(_:withPresence:));
+- (void)unsubscribeFromChannelGroups:(NSArray<NSString *> *)groups withPresence:(BOOL)shouldObservePresence;
 
 /**
  @brief      Disable presence events observation on specified channels.
@@ -424,7 +399,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)unsubscribeFromPresenceChannels:(NSArray<NSString *> *)channels NS_SWIFT_NAME(unsubscribeFromPresenceChannels(_:));
+- (void)unsubscribeFromPresenceChannels:(NSArray<NSString *> *)channels;
 
 /**
  @brief      Unsubscribe from all channels and groups on which client has been subscrbed so far.

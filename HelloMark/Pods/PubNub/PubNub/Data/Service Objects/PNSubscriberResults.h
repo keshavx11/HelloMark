@@ -116,14 +116,6 @@ NS_ASSUME_NONNULL_BEGIN
 ///------------------------------------------------
 
 /**
- @brief      Message sender identifier.
- @discussion Unique identifier of configured remote client which sent this \c message.
-
- @since 4.5.6
-*/
-@property (nonatomic, readonly, strong) NSString *publisher;
-
-/**
  @brief  Message which has been delivered through data object live feed.
  
  @return De-serialized message object.

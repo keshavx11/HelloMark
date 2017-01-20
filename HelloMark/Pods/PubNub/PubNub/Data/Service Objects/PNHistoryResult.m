@@ -20,11 +20,6 @@
     return (self.serviceData[@"messages"]?: @[]);
 }
 
-- (NSDictionary<NSString *,NSArray *> *)channels {
-    
-    return (self.serviceData[@"channels"]?: @{});
-}
-
 - (NSNumber *)start {
     
     return (self.serviceData[@"start"]?: @0);

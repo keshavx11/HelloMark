@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "222DAF4E5791429C4F01FC737B7E0C64"
+               BlueprintIdentifier = "545BD82E7EAD734F524920AB148EA260"
                BuildableName = "Pods_HelloMark.framework"
                BlueprintName = "Pods-HelloMark"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "222DAF4E5791429C4F01FC737B7E0C64"
+            BlueprintIdentifier = "545BD82E7EAD734F524920AB148EA260"
             BuildableName = "Pods_HelloMark.framework"
             BlueprintName = "Pods-HelloMark"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "222DAF4E5791429C4F01FC737B7E0C64"
-            BuildableName = "Pods_HelloMark.framework"
-            BlueprintName = "Pods-HelloMark"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

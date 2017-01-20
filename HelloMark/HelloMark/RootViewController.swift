@@ -18,6 +18,7 @@ class RootViewController: UICollectionViewController, UICollectionViewDelegateFl
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,45 +78,23 @@ class RootViewController: UICollectionViewController, UICollectionViewDelegateFl
             assert( false, "invalid section" )
         }
     }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-        
-        let layout = collectionViewLayout as! UICollectionViewFlowLayout
-        let margins = layout.sectionInset.left + layout.sectionInset.right
-        
-        switch indexPath.section {
-        case 0:
-            let width = ( collectionView.frame.size.width - layout.minimumInteritemSpacing - margins ) / 2.0
-            return CGSize(width, width * 0.86)
-        case 1:
-            return CGSize(collectionView.frame.size.width - margins, 60.0)
-        default:
-            assert( false, "invalid section" )
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        switch section {
-        case 0:
-            return UIEdgeInsetsMake(50.0, 50.0, 50.0, 50.0)
-        case 1:
-            return UIEdgeInsetsMake(0.0, 20.0, 20.0, 20.0)
-        default:
-            assert( false, "invalid section" )
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        switch section {
-        case 0:
-            return CGSize(0,0)
-        case 1:
-            return CGSize(collectionView.frame.width, 34.0)
-        default:
-            assert( false, "invalid section" )
-        }
-    }
-    
+//    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+//        
+//        let layout = collectionViewLayout as! UICollectionViewFlowLayout
+//        let margins = layout.sectionInset.left + layout.sectionInset.right
+//        
+//        switch indexPath.section {
+//        case 0:
+//            let width = ( collectionView.frame.size.width - layout.minimumInteritemSpacing - margins ) / 2.0
+//            return CGSize(width, width * 0.86)
+//        case 1:
+//            return CGSize(collectionView.frame.size.width - margins, 60.0)
+//        default:
+//            assert( false, "invalid section" )
+//        }
+//    }
+ 
     // MARK: - UICollectionViewDelegate protocol
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

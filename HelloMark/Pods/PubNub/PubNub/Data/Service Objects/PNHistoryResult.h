@@ -19,36 +19,21 @@ NS_ASSUME_NONNULL_BEGIN
 ///------------------------------------------------
 
 /**
- @brief      Channel history messages.
- @discussion \b Important: for \c PNHistoryForChannelsOperation operation this property always will be 
-             \c empty array.
+ @brief  Channel history messages.
  
  @since 4.0
  */
 @property (nonatomic, readonly, strong) NSArray *messages;
 
 /**
- @brief      Channels history.
- @discussion Each key represent name of channel for which messages has been received and valus is list of 
-             messages from channel's storage.
- @discussion \b Important: for  \c PNHistoryOperation operation this property always will be \c empty 
-             dictionary.
- 
- @since 4.5.6
- */
-@property (nonatomic, readonly, strong) NSDictionary<NSString *, NSArray *> *channels;
-
-/**
- @brief      History time frame start time.
- @discussion \b Important: for \c PNHistoryForChannelsOperation operation this property always will be \b 0.
+ @brief  History time frame start time.
  
  @since 4.0
  */
 @property (nonatomic, readonly, strong) NSNumber *start;
 
 /**
- @brief      History time frame end time.
- @discussion \b Important: for \c PNHistoryForChannelsOperation operation this property always will be \b 0.
+ @brief   History time frame end time.
  
  @since 4.0
  */

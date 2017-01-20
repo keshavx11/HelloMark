@@ -4,7 +4,12 @@
 target 'HelloMark' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'PubNub', '~> 4.5'
+  pod 'PubNub'
+  pod 'ApiAI/Core'
+  pod 'ApiAI/VoiceRequest'
+  pod 'ApiAI/UIKit'
+  pod 'ApiAI/ResponseMapping'
+  pod 'MBProgressHUD'
 
   target 'HelloMarkTests' do
     inherit! :search_paths
