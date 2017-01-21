@@ -1,1559 +1,739 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>004B27FB1E3220EF0087EF1D</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ChatViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>004B27FC1E3220EF0087EF1D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>004B27FB1E3220EF0087EF1D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>07D4E882191B7C2E67D78E14</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-HelloMarkUITests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-HelloMarkUITests/Pods-HelloMarkUITests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>102C3FBF157D5E396B6E07AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C7432D6290A8CBF707DF2466</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>17242D40C7BAA20419481AEC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-HelloMarkUITests/Pods-HelloMarkUITests-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>2376FD6F716274ED7F2425EA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-HelloMarkTests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-HelloMarkTests/Pods-HelloMarkTests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>38DB378D63E951B0EDA3805B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AFBDD7603F55463CDAD0385E</string>
-				<string>D8C81B5642E50A20F05AB70E</string>
-				<string>FEB77AA2747357A249F76FDE</string>
-				<string>2376FD6F716274ED7F2425EA</string>
-				<string>F160E7DE198943C254F22FFB</string>
-				<string>07D4E882191B7C2E67D78E14</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>414F65207661CD0107FC6E6A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-HelloMark/Pods-HelloMark-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>46798C72F3C380922A8FD147</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-HelloMarkTests/Pods-HelloMarkTests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>642A628D47FAACF270D8BC77</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B5A794B8F259CF670444DAF5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6F8197A4CFD2FE50A839DB56</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B5A794B8F259CF670444DAF5</string>
-				<string>A316A73CC04A0BC5E9E65782</string>
-				<string>C7432D6290A8CBF707DF2466</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9D35BA6D5B4822A8397C6CFA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>A316A73CC04A0BC5E9E65782</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_HelloMarkTests.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>AA1B2DC89CDB99B2E41BB7CE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-HelloMarkUITests/Pods-HelloMarkUITests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>AFBDD7603F55463CDAD0385E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-HelloMark.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-HelloMark/Pods-HelloMark.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B0DE24DE6CFA7238E7BA4230</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-HelloMark/Pods-HelloMark-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>B5A794B8F259CF670444DAF5</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_HelloMark.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>BCD48C7E82A8C91B8393B501</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A316A73CC04A0BC5E9E65782</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C7432D6290A8CBF707DF2466</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_HelloMarkUITests.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>D50228367A5F3F8EDBF70DBB</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-HelloMarkTests/Pods-HelloMarkTests-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>D8C81B5642E50A20F05AB70E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-HelloMark.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-HelloMark/Pods-HelloMark.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DE869CF0AE01B49A9EA35A38</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>E1C7BB561E2F5F64009CE875</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>RootViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1C7BB571E2F5F64009CE875</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E1C7BB561E2F5F64009CE875</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E1C7BB5C1E2F68D1009CE875</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>CollectionViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1C7BB5D1E2F68D1009CE875</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E1C7BB5C1E2F68D1009CE875</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E1C7BB5E1E2F6CA1009CE875</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>DeviceCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1C7BB5F1E2F6CA1009CE875</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E1C7BB5E1E2F6CA1009CE875</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E1F2EF811E2E814600A7DF56</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E1F2EF8C1E2E814700A7DF56</string>
-				<string>E1F2EFA11E2E814800A7DF56</string>
-				<string>E1F2EFAC1E2E814800A7DF56</string>
-				<string>E1F2EF8B1E2E814700A7DF56</string>
-				<string>38DB378D63E951B0EDA3805B</string>
-				<string>6F8197A4CFD2FE50A839DB56</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EF821E2E814600A7DF56</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0820</string>
-				<key>LastUpgradeCheck</key>
-				<string>0820</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>HelloMark</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>E1F2EF891E2E814600A7DF56</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>8.2.1</string>
-						<key>DevelopmentTeam</key>
-						<string>293K6F3WH6</string>
-						<key>ProvisioningStyle</key>
-						<string>Automatic</string>
-					</dict>
-					<key>E1F2EF9D1E2E814800A7DF56</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>8.2.1</string>
-						<key>ProvisioningStyle</key>
-						<string>Automatic</string>
-						<key>TestTargetID</key>
-						<string>E1F2EF891E2E814600A7DF56</string>
-					</dict>
-					<key>E1F2EFA81E2E814800A7DF56</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>8.2.1</string>
-						<key>ProvisioningStyle</key>
-						<string>Automatic</string>
-						<key>TestTargetID</key>
-						<string>E1F2EF891E2E814600A7DF56</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>E1F2EF851E2E814600A7DF56</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>E1F2EF811E2E814600A7DF56</string>
-			<key>productRefGroup</key>
-			<string>E1F2EF8B1E2E814700A7DF56</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>E1F2EF891E2E814600A7DF56</string>
-				<string>E1F2EF9D1E2E814800A7DF56</string>
-				<string>E1F2EFA81E2E814800A7DF56</string>
-			</array>
-		</dict>
-		<key>E1F2EF851E2E814600A7DF56</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>E1F2EFB01E2E814800A7DF56</string>
-				<string>E1F2EFB11E2E814800A7DF56</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>E1F2EF861E2E814600A7DF56</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>E1F2EF901E2E814700A7DF56</string>
-				<string>E1F2EF8E1E2E814700A7DF56</string>
-				<string>E1C7BB5D1E2F68D1009CE875</string>
-				<string>E1C7BB5F1E2F6CA1009CE875</string>
-				<string>004B27FC1E3220EF0087EF1D</string>
-				<string>E1C7BB571E2F5F64009CE875</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>E1F2EF871E2E814600A7DF56</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>642A628D47FAACF270D8BC77</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>E1F2EF881E2E814600A7DF56</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>E1F2EF981E2E814800A7DF56</string>
-				<string>E1F2EF951E2E814800A7DF56</string>
-				<string>E1F2EF931E2E814800A7DF56</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>E1F2EF891E2E814600A7DF56</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>E1F2EFB21E2E814800A7DF56</string>
-			<key>buildPhases</key>
-			<array>
-				<string>E4A0696A13730ED649BE8018</string>
-				<string>E1F2EF861E2E814600A7DF56</string>
-				<string>E1F2EF871E2E814600A7DF56</string>
-				<string>E1F2EF881E2E814600A7DF56</string>
-				<string>414F65207661CD0107FC6E6A</string>
-				<string>B0DE24DE6CFA7238E7BA4230</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>HelloMark</string>
-			<key>productName</key>
-			<string>HelloMark</string>
-			<key>productReference</key>
-			<string>E1F2EF8A1E2E814700A7DF56</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>E1F2EF8A1E2E814700A7DF56</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>HelloMark.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>E1F2EF8B1E2E814700A7DF56</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E1F2EF8A1E2E814700A7DF56</string>
-				<string>E1F2EF9E1E2E814800A7DF56</string>
-				<string>E1F2EFA91E2E814800A7DF56</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EF8C1E2E814700A7DF56</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E1F2EF8D1E2E814700A7DF56</string>
-				<string>E1C7BB561E2F5F64009CE875</string>
-				<string>004B27FB1E3220EF0087EF1D</string>
-				<string>E1C7BB5C1E2F68D1009CE875</string>
-				<string>E1C7BB5E1E2F6CA1009CE875</string>
-				<string>E1F2EF8F1E2E814700A7DF56</string>
-				<string>E1F2EF911E2E814800A7DF56</string>
-				<string>E1F2EF941E2E814800A7DF56</string>
-				<string>E1F2EF961E2E814800A7DF56</string>
-				<string>E1F2EF991E2E814800A7DF56</string>
-				<string>E1F2EFBF1E2E94EF00A7DF56</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>HelloMark</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EF8D1E2E814700A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EF8E1E2E814700A7DF56</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E1F2EF8D1E2E814700A7DF56</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E1F2EF8F1E2E814700A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EF901E2E814700A7DF56</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E1F2EF8F1E2E814700A7DF56</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E1F2EF911E2E814800A7DF56</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E1F2EF921E2E814800A7DF56</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EF921E2E814800A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EF931E2E814800A7DF56</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E1F2EF911E2E814800A7DF56</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E1F2EF941E2E814800A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EF951E2E814800A7DF56</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E1F2EF941E2E814800A7DF56</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E1F2EF961E2E814800A7DF56</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E1F2EF971E2E814800A7DF56</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EF971E2E814800A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EF981E2E814800A7DF56</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E1F2EF961E2E814800A7DF56</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E1F2EF991E2E814800A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EF9A1E2E814800A7DF56</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>E1F2EFA31E2E814800A7DF56</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>E1F2EF9B1E2E814800A7DF56</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>BCD48C7E82A8C91B8393B501</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>E1F2EF9C1E2E814800A7DF56</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>E1F2EF9D1E2E814800A7DF56</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>E1F2EFB51E2E814800A7DF56</string>
-			<key>buildPhases</key>
-			<array>
-				<string>9D35BA6D5B4822A8397C6CFA</string>
-				<string>E1F2EF9A1E2E814800A7DF56</string>
-				<string>E1F2EF9B1E2E814800A7DF56</string>
-				<string>E1F2EF9C1E2E814800A7DF56</string>
-				<string>D50228367A5F3F8EDBF70DBB</string>
-				<string>46798C72F3C380922A8FD147</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>E1F2EFA01E2E814800A7DF56</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>HelloMarkTests</string>
-			<key>productName</key>
-			<string>HelloMarkTests</string>
-			<key>productReference</key>
-			<string>E1F2EF9E1E2E814800A7DF56</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>E1F2EF9E1E2E814800A7DF56</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>HelloMarkTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>E1F2EF9F1E2E814800A7DF56</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>E1F2EF821E2E814600A7DF56</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>E1F2EF891E2E814600A7DF56</string>
-			<key>remoteInfo</key>
-			<string>HelloMark</string>
-		</dict>
-		<key>E1F2EFA01E2E814800A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>E1F2EF891E2E814600A7DF56</string>
-			<key>targetProxy</key>
-			<string>E1F2EF9F1E2E814800A7DF56</string>
-		</dict>
-		<key>E1F2EFA11E2E814800A7DF56</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E1F2EFA21E2E814800A7DF56</string>
-				<string>E1F2EFA41E2E814800A7DF56</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>HelloMarkTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EFA21E2E814800A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>HelloMarkTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EFA31E2E814800A7DF56</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E1F2EFA21E2E814800A7DF56</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E1F2EFA41E2E814800A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EFA51E2E814800A7DF56</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>E1F2EFAE1E2E814800A7DF56</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>E1F2EFA61E2E814800A7DF56</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>102C3FBF157D5E396B6E07AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>E1F2EFA71E2E814800A7DF56</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>E1F2EFA81E2E814800A7DF56</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>E1F2EFB81E2E814800A7DF56</string>
-			<key>buildPhases</key>
-			<array>
-				<string>DE869CF0AE01B49A9EA35A38</string>
-				<string>E1F2EFA51E2E814800A7DF56</string>
-				<string>E1F2EFA61E2E814800A7DF56</string>
-				<string>E1F2EFA71E2E814800A7DF56</string>
-				<string>17242D40C7BAA20419481AEC</string>
-				<string>AA1B2DC89CDB99B2E41BB7CE</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>E1F2EFAB1E2E814800A7DF56</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>HelloMarkUITests</string>
-			<key>productName</key>
-			<string>HelloMarkUITests</string>
-			<key>productReference</key>
-			<string>E1F2EFA91E2E814800A7DF56</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.ui-testing</string>
-		</dict>
-		<key>E1F2EFA91E2E814800A7DF56</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>HelloMarkUITests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>E1F2EFAA1E2E814800A7DF56</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>E1F2EF821E2E814600A7DF56</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>E1F2EF891E2E814600A7DF56</string>
-			<key>remoteInfo</key>
-			<string>HelloMark</string>
-		</dict>
-		<key>E1F2EFAB1E2E814800A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>E1F2EF891E2E814600A7DF56</string>
-			<key>targetProxy</key>
-			<string>E1F2EFAA1E2E814800A7DF56</string>
-		</dict>
-		<key>E1F2EFAC1E2E814800A7DF56</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E1F2EFAD1E2E814800A7DF56</string>
-				<string>E1F2EFAF1E2E814800A7DF56</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>HelloMarkUITests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EFAD1E2E814800A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>HelloMarkUITests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EFAE1E2E814800A7DF56</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E1F2EFAD1E2E814800A7DF56</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E1F2EFAF1E2E814800A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1F2EFB01E2E814800A7DF56</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.2</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_ACTIVE_COMPILATION_CONDITIONS</key>
-				<string>DEBUG</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>E1F2EFB11E2E814800A7DF56</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.2</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Owholemodule</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>E1F2EFB21E2E814800A7DF56</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>E1F2EFB31E2E814800A7DF56</string>
-				<string>E1F2EFB41E2E814800A7DF56</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>E1F2EFB31E2E814800A7DF56</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>AFBDD7603F55463CDAD0385E</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>DEVELOPMENT_TEAM</key>
-				<string>293K6F3WH6</string>
-				<key>INFOPLIST_FILE</key>
-				<string>HelloMark/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.kb.HelloMark</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_INSTALL_OBJC_HEADER</key>
-				<string>YES</string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>HelloMark/HelloMark-Bridging-Header.h</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>E1F2EFB41E2E814800A7DF56</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>D8C81B5642E50A20F05AB70E</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>DEVELOPMENT_TEAM</key>
-				<string>293K6F3WH6</string>
-				<key>INFOPLIST_FILE</key>
-				<string>HelloMark/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.kb.HelloMark</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_INSTALL_OBJC_HEADER</key>
-				<string>YES</string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>HelloMark/HelloMark-Bridging-Header.h</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>E1F2EFB51E2E814800A7DF56</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>E1F2EFB61E2E814800A7DF56</string>
-				<string>E1F2EFB71E2E814800A7DF56</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>E1F2EFB61E2E814800A7DF56</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>FEB77AA2747357A249F76FDE</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES</key>
-				<string>YES</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>HelloMarkTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.kb.HelloMarkTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/HelloMark.app/HelloMark</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>E1F2EFB71E2E814800A7DF56</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>2376FD6F716274ED7F2425EA</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES</key>
-				<string>YES</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>HelloMarkTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.kb.HelloMarkTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/HelloMark.app/HelloMark</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>E1F2EFB81E2E814800A7DF56</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>E1F2EFB91E2E814800A7DF56</string>
-				<string>E1F2EFBA1E2E814800A7DF56</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>E1F2EFB91E2E814800A7DF56</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F160E7DE198943C254F22FFB</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>HelloMarkUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.kb.HelloMarkUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>HelloMark</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>E1F2EFBA1E2E814800A7DF56</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>07D4E882191B7C2E67D78E14</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>HelloMarkUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.kb.HelloMarkUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>HelloMark</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>E1F2EFBF1E2E94EF00A7DF56</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>HelloMark-Bridging-Header.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E4A0696A13730ED649BE8018</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>F160E7DE198943C254F22FFB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-HelloMarkUITests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-HelloMarkUITests/Pods-HelloMarkUITests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FEB77AA2747357A249F76FDE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-HelloMarkTests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-HelloMarkTests/Pods-HelloMarkTests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>E1F2EF821E2E814600A7DF56</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		004B27FC1E3220EF0087EF1D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B27FB1E3220EF0087EF1D /* ChatViewController.swift */; };
+		102C3FBF157D5E396B6E07AF /* Pods_HelloMarkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7432D6290A8CBF707DF2466 /* Pods_HelloMarkUITests.framework */; };
+		642A628D47FAACF270D8BC77 /* Pods_HelloMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A794B8F259CF670444DAF5 /* Pods_HelloMark.framework */; };
+		BCD48C7E82A8C91B8393B501 /* Pods_HelloMarkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A316A73CC04A0BC5E9E65782 /* Pods_HelloMarkTests.framework */; };
+		E10C86781E33D60100DD6426 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10C86771E33D60100DD6426 /* HomeViewController.swift */; };
+		E1F2EF8E1E2E814700A7DF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2EF8D1E2E814700A7DF56 /* AppDelegate.swift */; };
+		E1F2EF901E2E814700A7DF56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2EF8F1E2E814700A7DF56 /* ViewController.swift */; };
+		E1F2EF931E2E814800A7DF56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F2EF911E2E814800A7DF56 /* Main.storyboard */; };
+		E1F2EF951E2E814800A7DF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F2EF941E2E814800A7DF56 /* Assets.xcassets */; };
+		E1F2EF981E2E814800A7DF56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F2EF961E2E814800A7DF56 /* LaunchScreen.storyboard */; };
+		E1F2EFA31E2E814800A7DF56 /* HelloMarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2EFA21E2E814800A7DF56 /* HelloMarkTests.swift */; };
+		E1F2EFAE1E2E814800A7DF56 /* HelloMarkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2EFAD1E2E814800A7DF56 /* HelloMarkUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E1F2EF9F1E2E814800A7DF56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1F2EF821E2E814600A7DF56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1F2EF891E2E814600A7DF56;
+			remoteInfo = HelloMark;
+		};
+		E1F2EFAA1E2E814800A7DF56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1F2EF821E2E814600A7DF56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1F2EF891E2E814600A7DF56;
+			remoteInfo = HelloMark;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		004B27FB1E3220EF0087EF1D /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		07D4E882191B7C2E67D78E14 /* Pods-HelloMarkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloMarkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloMarkUITests/Pods-HelloMarkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2376FD6F716274ED7F2425EA /* Pods-HelloMarkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloMarkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloMarkTests/Pods-HelloMarkTests.release.xcconfig"; sourceTree = "<group>"; };
+		A316A73CC04A0BC5E9E65782 /* Pods_HelloMarkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloMarkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFBDD7603F55463CDAD0385E /* Pods-HelloMark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloMark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloMark/Pods-HelloMark.debug.xcconfig"; sourceTree = "<group>"; };
+		B5A794B8F259CF670444DAF5 /* Pods_HelloMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7432D6290A8CBF707DF2466 /* Pods_HelloMarkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloMarkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8C81B5642E50A20F05AB70E /* Pods-HelloMark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloMark.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloMark/Pods-HelloMark.release.xcconfig"; sourceTree = "<group>"; };
+		E10C86771E33D60100DD6426 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E1F2EF8A1E2E814700A7DF56 /* HelloMark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloMark.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F2EF8D1E2E814700A7DF56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E1F2EF8F1E2E814700A7DF56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1F2EF921E2E814800A7DF56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E1F2EF941E2E814800A7DF56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E1F2EF971E2E814800A7DF56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E1F2EF991E2E814800A7DF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F2EF9E1E2E814800A7DF56 /* HelloMarkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloMarkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F2EFA21E2E814800A7DF56 /* HelloMarkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloMarkTests.swift; sourceTree = "<group>"; };
+		E1F2EFA41E2E814800A7DF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F2EFA91E2E814800A7DF56 /* HelloMarkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloMarkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F2EFAD1E2E814800A7DF56 /* HelloMarkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloMarkUITests.swift; sourceTree = "<group>"; };
+		E1F2EFAF1E2E814800A7DF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F2EFBF1E2E94EF00A7DF56 /* HelloMark-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloMark-Bridging-Header.h"; sourceTree = "<group>"; };
+		F160E7DE198943C254F22FFB /* Pods-HelloMarkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloMarkUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloMarkUITests/Pods-HelloMarkUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FEB77AA2747357A249F76FDE /* Pods-HelloMarkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloMarkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloMarkTests/Pods-HelloMarkTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1F2EF871E2E814600A7DF56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				642A628D47FAACF270D8BC77 /* Pods_HelloMark.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F2EF9B1E2E814800A7DF56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCD48C7E82A8C91B8393B501 /* Pods_HelloMarkTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F2EFA61E2E814800A7DF56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				102C3FBF157D5E396B6E07AF /* Pods_HelloMarkUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38DB378D63E951B0EDA3805B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFBDD7603F55463CDAD0385E /* Pods-HelloMark.debug.xcconfig */,
+				D8C81B5642E50A20F05AB70E /* Pods-HelloMark.release.xcconfig */,
+				FEB77AA2747357A249F76FDE /* Pods-HelloMarkTests.debug.xcconfig */,
+				2376FD6F716274ED7F2425EA /* Pods-HelloMarkTests.release.xcconfig */,
+				F160E7DE198943C254F22FFB /* Pods-HelloMarkUITests.debug.xcconfig */,
+				07D4E882191B7C2E67D78E14 /* Pods-HelloMarkUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6F8197A4CFD2FE50A839DB56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5A794B8F259CF670444DAF5 /* Pods_HelloMark.framework */,
+				A316A73CC04A0BC5E9E65782 /* Pods_HelloMarkTests.framework */,
+				C7432D6290A8CBF707DF2466 /* Pods_HelloMarkUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1F2EF811E2E814600A7DF56 = {
+			isa = PBXGroup;
+			children = (
+				E1F2EF8C1E2E814700A7DF56 /* HelloMark */,
+				E1F2EFA11E2E814800A7DF56 /* HelloMarkTests */,
+				E1F2EFAC1E2E814800A7DF56 /* HelloMarkUITests */,
+				E1F2EF8B1E2E814700A7DF56 /* Products */,
+				38DB378D63E951B0EDA3805B /* Pods */,
+				6F8197A4CFD2FE50A839DB56 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E1F2EF8B1E2E814700A7DF56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1F2EF8A1E2E814700A7DF56 /* HelloMark.app */,
+				E1F2EF9E1E2E814800A7DF56 /* HelloMarkTests.xctest */,
+				E1F2EFA91E2E814800A7DF56 /* HelloMarkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1F2EF8C1E2E814700A7DF56 /* HelloMark */ = {
+			isa = PBXGroup;
+			children = (
+				E1F2EF8D1E2E814700A7DF56 /* AppDelegate.swift */,
+				E10C86771E33D60100DD6426 /* HomeViewController.swift */,
+				E1F2EF8F1E2E814700A7DF56 /* ViewController.swift */,
+				004B27FB1E3220EF0087EF1D /* ChatViewController.swift */,
+				E1F2EF911E2E814800A7DF56 /* Main.storyboard */,
+				E1F2EF941E2E814800A7DF56 /* Assets.xcassets */,
+				E1F2EF961E2E814800A7DF56 /* LaunchScreen.storyboard */,
+				E1F2EF991E2E814800A7DF56 /* Info.plist */,
+				E1F2EFBF1E2E94EF00A7DF56 /* HelloMark-Bridging-Header.h */,
+			);
+			path = HelloMark;
+			sourceTree = "<group>";
+		};
+		E1F2EFA11E2E814800A7DF56 /* HelloMarkTests */ = {
+			isa = PBXGroup;
+			children = (
+				E1F2EFA21E2E814800A7DF56 /* HelloMarkTests.swift */,
+				E1F2EFA41E2E814800A7DF56 /* Info.plist */,
+			);
+			path = HelloMarkTests;
+			sourceTree = "<group>";
+		};
+		E1F2EFAC1E2E814800A7DF56 /* HelloMarkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E1F2EFAD1E2E814800A7DF56 /* HelloMarkUITests.swift */,
+				E1F2EFAF1E2E814800A7DF56 /* Info.plist */,
+			);
+			path = HelloMarkUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1F2EF891E2E814600A7DF56 /* HelloMark */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1F2EFB21E2E814800A7DF56 /* Build configuration list for PBXNativeTarget "HelloMark" */;
+			buildPhases = (
+				E4A0696A13730ED649BE8018 /* [CP] Check Pods Manifest.lock */,
+				E1F2EF861E2E814600A7DF56 /* Sources */,
+				E1F2EF871E2E814600A7DF56 /* Frameworks */,
+				E1F2EF881E2E814600A7DF56 /* Resources */,
+				414F65207661CD0107FC6E6A /* [CP] Embed Pods Frameworks */,
+				B0DE24DE6CFA7238E7BA4230 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloMark;
+			productName = HelloMark;
+			productReference = E1F2EF8A1E2E814700A7DF56 /* HelloMark.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E1F2EF9D1E2E814800A7DF56 /* HelloMarkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1F2EFB51E2E814800A7DF56 /* Build configuration list for PBXNativeTarget "HelloMarkTests" */;
+			buildPhases = (
+				9D35BA6D5B4822A8397C6CFA /* [CP] Check Pods Manifest.lock */,
+				E1F2EF9A1E2E814800A7DF56 /* Sources */,
+				E1F2EF9B1E2E814800A7DF56 /* Frameworks */,
+				E1F2EF9C1E2E814800A7DF56 /* Resources */,
+				D50228367A5F3F8EDBF70DBB /* [CP] Embed Pods Frameworks */,
+				46798C72F3C380922A8FD147 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1F2EFA01E2E814800A7DF56 /* PBXTargetDependency */,
+			);
+			name = HelloMarkTests;
+			productName = HelloMarkTests;
+			productReference = E1F2EF9E1E2E814800A7DF56 /* HelloMarkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E1F2EFA81E2E814800A7DF56 /* HelloMarkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1F2EFB81E2E814800A7DF56 /* Build configuration list for PBXNativeTarget "HelloMarkUITests" */;
+			buildPhases = (
+				DE869CF0AE01B49A9EA35A38 /* [CP] Check Pods Manifest.lock */,
+				E1F2EFA51E2E814800A7DF56 /* Sources */,
+				E1F2EFA61E2E814800A7DF56 /* Frameworks */,
+				E1F2EFA71E2E814800A7DF56 /* Resources */,
+				17242D40C7BAA20419481AEC /* [CP] Embed Pods Frameworks */,
+				AA1B2DC89CDB99B2E41BB7CE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1F2EFAB1E2E814800A7DF56 /* PBXTargetDependency */,
+			);
+			name = HelloMarkUITests;
+			productName = HelloMarkUITests;
+			productReference = E1F2EFA91E2E814800A7DF56 /* HelloMarkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1F2EF821E2E814600A7DF56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = HelloMark;
+				TargetAttributes = {
+					E1F2EF891E2E814600A7DF56 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 293K6F3WH6;
+						ProvisioningStyle = Automatic;
+					};
+					E1F2EF9D1E2E814800A7DF56 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E1F2EF891E2E814600A7DF56;
+					};
+					E1F2EFA81E2E814800A7DF56 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E1F2EF891E2E814600A7DF56;
+					};
+				};
+			};
+			buildConfigurationList = E1F2EF851E2E814600A7DF56 /* Build configuration list for PBXProject "HelloMark" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E1F2EF811E2E814600A7DF56;
+			productRefGroup = E1F2EF8B1E2E814700A7DF56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1F2EF891E2E814600A7DF56 /* HelloMark */,
+				E1F2EF9D1E2E814800A7DF56 /* HelloMarkTests */,
+				E1F2EFA81E2E814800A7DF56 /* HelloMarkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1F2EF881E2E814600A7DF56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1F2EF981E2E814800A7DF56 /* LaunchScreen.storyboard in Resources */,
+				E1F2EF951E2E814800A7DF56 /* Assets.xcassets in Resources */,
+				E1F2EF931E2E814800A7DF56 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F2EF9C1E2E814800A7DF56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F2EFA71E2E814800A7DF56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17242D40C7BAA20419481AEC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloMarkUITests/Pods-HelloMarkUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		414F65207661CD0107FC6E6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloMark/Pods-HelloMark-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46798C72F3C380922A8FD147 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloMarkTests/Pods-HelloMarkTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D35BA6D5B4822A8397C6CFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AA1B2DC89CDB99B2E41BB7CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloMarkUITests/Pods-HelloMarkUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0DE24DE6CFA7238E7BA4230 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloMark/Pods-HelloMark-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D50228367A5F3F8EDBF70DBB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloMarkTests/Pods-HelloMarkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE869CF0AE01B49A9EA35A38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E4A0696A13730ED649BE8018 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1F2EF861E2E814600A7DF56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1F2EF901E2E814700A7DF56 /* ViewController.swift in Sources */,
+				E1F2EF8E1E2E814700A7DF56 /* AppDelegate.swift in Sources */,
+				004B27FC1E3220EF0087EF1D /* ChatViewController.swift in Sources */,
+				E10C86781E33D60100DD6426 /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F2EF9A1E2E814800A7DF56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1F2EFA31E2E814800A7DF56 /* HelloMarkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F2EFA51E2E814800A7DF56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1F2EFAE1E2E814800A7DF56 /* HelloMarkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1F2EFA01E2E814800A7DF56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1F2EF891E2E814600A7DF56 /* HelloMark */;
+			targetProxy = E1F2EF9F1E2E814800A7DF56 /* PBXContainerItemProxy */;
+		};
+		E1F2EFAB1E2E814800A7DF56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1F2EF891E2E814600A7DF56 /* HelloMark */;
+			targetProxy = E1F2EFAA1E2E814800A7DF56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E1F2EF911E2E814800A7DF56 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1F2EF921E2E814800A7DF56 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E1F2EF961E2E814800A7DF56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1F2EF971E2E814800A7DF56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1F2EFB01E2E814800A7DF56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E1F2EFB11E2E814800A7DF56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E1F2EFB31E2E814800A7DF56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFBDD7603F55463CDAD0385E /* Pods-HelloMark.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 293K6F3WH6;
+				INFOPLIST_FILE = HelloMark/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kb.HelloMark;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloMark/HelloMark-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E1F2EFB41E2E814800A7DF56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8C81B5642E50A20F05AB70E /* Pods-HelloMark.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 293K6F3WH6;
+				INFOPLIST_FILE = HelloMark/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kb.HelloMark;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloMark/HelloMark-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E1F2EFB61E2E814800A7DF56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEB77AA2747357A249F76FDE /* Pods-HelloMarkTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HelloMarkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kb.HelloMarkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloMark.app/HelloMark";
+			};
+			name = Debug;
+		};
+		E1F2EFB71E2E814800A7DF56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2376FD6F716274ED7F2425EA /* Pods-HelloMarkTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HelloMarkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kb.HelloMarkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloMark.app/HelloMark";
+			};
+			name = Release;
+		};
+		E1F2EFB91E2E814800A7DF56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F160E7DE198943C254F22FFB /* Pods-HelloMarkUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = HelloMarkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kb.HelloMarkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HelloMark;
+			};
+			name = Debug;
+		};
+		E1F2EFBA1E2E814800A7DF56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07D4E882191B7C2E67D78E14 /* Pods-HelloMarkUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = HelloMarkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kb.HelloMarkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HelloMark;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1F2EF851E2E814600A7DF56 /* Build configuration list for PBXProject "HelloMark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1F2EFB01E2E814800A7DF56 /* Debug */,
+				E1F2EFB11E2E814800A7DF56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1F2EFB21E2E814800A7DF56 /* Build configuration list for PBXNativeTarget "HelloMark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1F2EFB31E2E814800A7DF56 /* Debug */,
+				E1F2EFB41E2E814800A7DF56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1F2EFB51E2E814800A7DF56 /* Build configuration list for PBXNativeTarget "HelloMarkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1F2EFB61E2E814800A7DF56 /* Debug */,
+				E1F2EFB71E2E814800A7DF56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1F2EFB81E2E814800A7DF56 /* Build configuration list for PBXNativeTarget "HelloMarkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1F2EFB91E2E814800A7DF56 /* Debug */,
+				E1F2EFBA1E2E814800A7DF56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1F2EF821E2E814600A7DF56 /* Project object */;
+}
