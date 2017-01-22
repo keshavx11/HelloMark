@@ -30,7 +30,7 @@
         <scene sceneID="nqt-Bn-vQt">
             <objects>
                 <collectionViewController id="4hr-Yr-Egx" customClass="RootViewController" customModule="HelloMark" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" dataMode="prototypes" id="6Ih-Xi-A8o">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" dataMode="prototypes" id="6Ih-Xi-A8o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -143,6 +143,14 @@
                                     <action selector="sendText:" destination="Yex-lr-sbq" eventType="touchUpInside" id="7R4-q3-gn4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdb-KB-FFG">
+                                <rect key="frame" x="165" y="409" width="44" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="mic"/>
+                                <connections>
+                                    <action selector="microphoneTapped:" destination="Yex-lr-sbq" eventType="touchUpInside" id="E0x-Vz-PVa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -154,6 +162,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="microphoneButton" destination="Vdb-KB-FFG" id="ScM-SS-f5y"/>
                         <outlet property="textField" destination="9Wd-m7-FxU" id="G3B-hm-BVu"/>
                     </connections>
                 </viewController>
@@ -342,5 +351,6 @@
     </scenes>
     <resources>
         <image name="face1" width="40" height="39"/>
+        <image name="mic" width="446" height="473"/>
     </resources>
 </document>

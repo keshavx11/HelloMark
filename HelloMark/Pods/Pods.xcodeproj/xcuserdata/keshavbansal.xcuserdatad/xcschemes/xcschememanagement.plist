@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ApiAI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HelloMark.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,11 +37,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>222DAF4E5791429C4F01FC737B7E0C64</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>2C129200C781A4C1105EAA7E026AF11C</key>
 		<dict>
 			<key>primary</key>
@@ -47,11 +52,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>545BD82E7EAD734F524920AB148EA260</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>798D1D9AD19A004C5081AC031D1036E8</key>
 		<dict>
 			<key>primary</key>
@@ -63,36 +63,6 @@
 			<true/>
 		</dict>
 		<key>A82FF5EA3C4F5AF8B4B363343413460F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D980D721340544028DD1C2FADAA01509</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DBA6001481CEA0EBA031CC5C94508FAA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DEC2F40D63BBF950622F13030D636803</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DF916531D687E1CB36F316674513D250</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E1EE26E837CF92586131920A7D9E74FA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F2664B17FB704A4095A99A1F3C8498B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

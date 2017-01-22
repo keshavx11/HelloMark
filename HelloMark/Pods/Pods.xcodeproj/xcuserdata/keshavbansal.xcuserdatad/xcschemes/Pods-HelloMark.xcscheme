@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "222DAF4E5791429C4F01FC737B7E0C64"
+               BlueprintIdentifier = "798D1D9AD19A004C5081AC031D1036E8"
                BuildableName = "Pods_HelloMark.framework"
                BlueprintName = "Pods-HelloMark"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "222DAF4E5791429C4F01FC737B7E0C64"
+            BlueprintIdentifier = "798D1D9AD19A004C5081AC031D1036E8"
             BuildableName = "Pods_HelloMark.framework"
             BlueprintName = "Pods-HelloMark"
             ReferencedContainer = "container:Pods.xcodeproj">
