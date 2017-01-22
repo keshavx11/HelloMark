@@ -12,6 +12,10 @@
 		642A628D47FAACF270D8BC77 /* Pods_HelloMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A794B8F259CF670444DAF5 /* Pods_HelloMark.framework */; };
 		BCD48C7E82A8C91B8393B501 /* Pods_HelloMarkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A316A73CC04A0BC5E9E65782 /* Pods_HelloMarkTests.framework */; };
 		E10C86781E33D60100DD6426 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10C86771E33D60100DD6426 /* HomeViewController.swift */; };
+		E18443DC1E34C0F7000AF88F /* bedroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E18443D81E34C0F7000AF88F /* bedroom.jpg */; };
+		E18443DD1E34C0F7000AF88F /* kitchen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E18443D91E34C0F7000AF88F /* kitchen.jpg */; };
+		E18443DE1E34C0F7000AF88F /* livingroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E18443DA1E34C0F7000AF88F /* livingroom.jpg */; };
+		E18443DF1E34C0F7000AF88F /* washroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E18443DB1E34C0F7000AF88F /* washroom.jpg */; };
 		E1F2EF8E1E2E814700A7DF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2EF8D1E2E814700A7DF56 /* AppDelegate.swift */; };
 		E1F2EF901E2E814700A7DF56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2EF8F1E2E814700A7DF56 /* ViewController.swift */; };
 		E1F2EF931E2E814800A7DF56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F2EF911E2E814800A7DF56 /* Main.storyboard */; };
@@ -48,6 +52,10 @@
 		C7432D6290A8CBF707DF2466 /* Pods_HelloMarkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloMarkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C81B5642E50A20F05AB70E /* Pods-HelloMark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloMark.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloMark/Pods-HelloMark.release.xcconfig"; sourceTree = "<group>"; };
 		E10C86771E33D60100DD6426 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E18443D81E34C0F7000AF88F /* bedroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bedroom.jpg; path = images/bedroom.jpg; sourceTree = "<group>"; };
+		E18443D91E34C0F7000AF88F /* kitchen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kitchen.jpg; path = images/kitchen.jpg; sourceTree = "<group>"; };
+		E18443DA1E34C0F7000AF88F /* livingroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = livingroom.jpg; path = images/livingroom.jpg; sourceTree = "<group>"; };
+		E18443DB1E34C0F7000AF88F /* washroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = washroom.jpg; path = images/washroom.jpg; sourceTree = "<group>"; };
 		E1F2EF8A1E2E814700A7DF56 /* HelloMark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloMark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F2EF8D1E2E814700A7DF56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1F2EF8F1E2E814700A7DF56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,9 +125,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E18443D71E34C0EE000AF88F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E18443D81E34C0F7000AF88F /* bedroom.jpg */,
+				E18443D91E34C0F7000AF88F /* kitchen.jpg */,
+				E18443DA1E34C0F7000AF88F /* livingroom.jpg */,
+				E18443DB1E34C0F7000AF88F /* washroom.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		E1F2EF811E2E814600A7DF56 = {
 			isa = PBXGroup;
 			children = (
+				E18443D71E34C0EE000AF88F /* images */,
 				E1F2EF8C1E2E814700A7DF56 /* HelloMark */,
 				E1F2EFA11E2E814800A7DF56 /* HelloMarkTests */,
 				E1F2EFAC1E2E814800A7DF56 /* HelloMarkUITests */,
@@ -291,8 +311,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F2EF981E2E814800A7DF56 /* LaunchScreen.storyboard in Resources */,
+				E18443DE1E34C0F7000AF88F /* livingroom.jpg in Resources */,
 				E1F2EF951E2E814800A7DF56 /* Assets.xcassets in Resources */,
+				E18443DC1E34C0F7000AF88F /* bedroom.jpg in Resources */,
 				E1F2EF931E2E814800A7DF56 /* Main.storyboard in Resources */,
+				E18443DD1E34C0F7000AF88F /* kitchen.jpg in Resources */,
+				E18443DF1E34C0F7000AF88F /* washroom.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

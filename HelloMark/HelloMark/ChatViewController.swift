@@ -25,25 +25,19 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate {
         super.viewDidLoad()
         
         microphoneButton.isEnabled = false  //2
-        
         speechRecognizer?.delegate = self  //3
-        
         SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
-            
             var isButtonEnabled = false
-            
+
             switch authStatus {  //5
             case .authorized:
                 isButtonEnabled = true
-                
             case .denied:
                 isButtonEnabled = false
                 print("User denied access to speech recognition")
-                
             case .restricted:
                 isButtonEnabled = false
                 print("Speech recognition restricted on this device")
-                
             case .notDetermined:
                 isButtonEnabled = false
                 print("Speech recognition not yet authorized")
@@ -60,10 +54,8 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate {
             audioEngine.stop()
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
-            microphoneButton.setTitle("Start Recording", for: .normal)
         } else {
             startRecording()
-            microphoneButton.setTitle("Stop Recording", for: .normal)
         }
     }
     
@@ -180,9 +172,14 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate {
             microphoneButton.isEnabled = false
         }
     }
+    
+    
+    @IBAction func backBtn(_ sender: UIButton){
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
-    
+
 
     /*
     // MARK: - Navigation

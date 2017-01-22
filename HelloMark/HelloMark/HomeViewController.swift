@@ -22,10 +22,17 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.navigationController!.navigationBar.barTintColor = UIColor(red: 44/255.0, green: 2/255.0, blue: 95/255.0, alpha: 1.0)
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
         self.scrollView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.startButton.layer.cornerRadius = 8.0
         self.scrollView.contentSize = CGSize(width: self.scrollView.frame.width * 4, height: self.scrollView.frame.height)
         self.scrollView.delegate = self
+        
+        self.imageView.layer.cornerRadius = 10.0
+        imageView.clipsToBounds = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,19 +59,19 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         if Int(currentPage) == 0{
             label.text = "Bedroom"
             textView.text = "AB"
-            imageView.image = UIImage(named: "face1.png")
+            imageView.image = UIImage(named: "bedroom.jpg")
         }else if Int(currentPage) == 1{
             label.text = "Kitchen"
             textView.text = "AB"
-            imageView.image = UIImage(named: "face2.png")
+            imageView.image = UIImage(named: "kitchen.jpg")
         }else if Int(currentPage) == 2{
             label.text = "Living Room"
             textView.text = "AB"
-            imageView.image = UIImage(named: "face1.png")
+            imageView.image = UIImage(named: "livingroom.jpg")
         }else if Int(currentPage) == 3{
             label.text = "Washroom"
             textView.text = "AB"
-            imageView.image = UIImage(named: "face2.png")
+            imageView.image = UIImage(named: "washroom.jpg")
         }
         
     }
