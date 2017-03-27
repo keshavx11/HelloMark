@@ -8,73 +8,80 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UIScrollViewDelegate {
+class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var textView: UITextView!
-    @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var label: UILabel!
     var isReady: Bool = false
-    
     @IBOutlet var startButton: UIButton!
+    
+    var imageName = [UIImage(named: "bedroom"),UIImage(named: "kitchen"),UIImage(named: "dining"),UIImage(named: "living"),]
+    
+    var nameArray = ["Bedroom","Kitchen","Dining Room","Living Room"]
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return nameArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        cell.imgImage.image = imageName[indexPath.row]
+        cell.lblName.text! = nameArray[indexPath.row]
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width / 2 - 1
+        
+        return CGSize(width: width, height: width)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let MainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let desCV = MainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        self.navigationController?.pushViewController(desCV, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        self.navigationController!.navigationBar.barTintColor = UIColor(red: 44/255.0, green: 2/255.0, blue: 95/255.0, alpha: 1.0)
+        self.navigationController!.navigationBar.barTintColor = UIColor(red: 31/255.0, green: 31/255.0, blue: 31/255.0, alpha: 1.0)
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        
-        self.scrollView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        self.startButton.layer.cornerRadius = 8.0
-        self.scrollView.contentSize = CGSize(width: self.scrollView.frame.width * 4, height: self.scrollView.frame.height)
-        self.scrollView.delegate = self
-        
-        self.imageView.layer.cornerRadius = 10.0
-        imageView.clipsToBounds = true
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    //MARK: UIScrollViewDelegate
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
-        // Test the offset and calculate the current page after scrolling ends
-        let pageWidth:CGFloat = scrollView.frame.width
-        let currentPage:CGFloat = floor((scrollView.contentOffset.x-pageWidth/2)/pageWidth)+1
-        // Change the indicator
-        self.pageControl.currentPage = Int(currentPage);
-        self.details(self.pageControl.currentPage)
-    }
     
-    @IBAction func pageChange(){
-        let currentPage = pageControl.currentPage
-        scrollView.contentOffset.x = (self.view.frame.width * CGFloat(currentPage))
-        self.details(currentPage)
-    }
     
-    func details(_ currentPage: Int){
-        if Int(currentPage) == 0{
-            label.text = "Bedroom"
-            textView.text = "AB"
-            imageView.image = UIImage(named: "bedroom.jpg")
-        }else if Int(currentPage) == 1{
-            label.text = "Kitchen"
-            textView.text = "AB"
-            imageView.image = UIImage(named: "kitchen.jpg")
-        }else if Int(currentPage) == 2{
-            label.text = "Living Room"
-            textView.text = "AB"
-            imageView.image = UIImage(named: "livingroom.jpg")
-        }else if Int(currentPage) == 3{
-            label.text = "Washroom"
-            textView.text = "AB"
-            imageView.image = UIImage(named: "washroom.jpg")
-        }
-        
-    }
+//    func details(_ currentPage: Int){
+//        if Int(currentPage) == 0{
+//            label.text = "Bedroom"
+//            textView.text = "AB"
+//            imageView.image = UIImage(named: "bedroom.jpg")
+//        }else if Int(currentPage) == 1{
+//            label.text = "Kitchen"
+//            textView.text = "AB"
+//            imageView.image = UIImage(named: "kitchen.jpg")
+//        }else if Int(currentPage) == 2{
+//            label.text = "Living Room"
+//            textView.text = "AB"
+//            imageView.image = UIImage(named: "livingroom.jpg")
+//        }else if Int(currentPage) == 3{
+//            label.text = "Washroom"
+//            textView.text = "AB"
+//            imageView.image = UIImage(named: "washroom.jpg")
+//        }
+//        
+//    }
     
     @IBAction func next(){
     }

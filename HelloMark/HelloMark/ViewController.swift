@@ -13,15 +13,16 @@ import PubNub
 class ViewController: UIViewController, PNObjectEventListener {
     
     var client: PubNub!
+    @IBOutlet var swtch: UISwitch!
 
-    @IBAction func publish(_ sender: Any) {
+    @IBAction func publish() {
         var publishJSON: NSDictionary!
-        if (sender as AnyObject).tag == 1{
+        if swtch.isOn == true{
         publishJSON = ["place": "bedroom",
                                          "device": "light",
                                          "state": true
         ]
-        }else if (sender as AnyObject).tag == 2{
+        }else{
         publishJSON = ["place": "bedroom",
                                              "device": "light",
                                              "state": false

@@ -23,6 +23,7 @@
 		E1F2EF981E2E814800A7DF56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F2EF961E2E814800A7DF56 /* LaunchScreen.storyboard */; };
 		E1F2EFA31E2E814800A7DF56 /* HelloMarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2EFA21E2E814800A7DF56 /* HelloMarkTests.swift */; };
 		E1F2EFAE1E2E814800A7DF56 /* HelloMarkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2EFAD1E2E814800A7DF56 /* HelloMarkUITests.swift */; };
+		E1FE81DC1E891411005F81E0 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FE81DB1E891411005F81E0 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		E1F2EFAD1E2E814800A7DF56 /* HelloMarkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloMarkUITests.swift; sourceTree = "<group>"; };
 		E1F2EFAF1E2E814800A7DF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F2EFBF1E2E94EF00A7DF56 /* HelloMark-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloMark-Bridging-Header.h"; sourceTree = "<group>"; };
+		E1FE81DB1E891411005F81E0 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F160E7DE198943C254F22FFB /* Pods-HelloMarkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloMarkUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloMarkUITests/Pods-HelloMarkUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FEB77AA2747357A249F76FDE /* Pods-HelloMarkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloMarkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloMarkTests/Pods-HelloMarkTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +168,7 @@
 				E10C86771E33D60100DD6426 /* HomeViewController.swift */,
 				E1F2EF8F1E2E814700A7DF56 /* ViewController.swift */,
 				004B27FB1E3220EF0087EF1D /* ChatViewController.swift */,
+				E1FE81DB1E891411005F81E0 /* CollectionViewCell.swift */,
 				E1F2EF911E2E814800A7DF56 /* Main.storyboard */,
 				E1F2EF941E2E814800A7DF56 /* Assets.xcassets */,
 				E1F2EF961E2E814800A7DF56 /* LaunchScreen.storyboard */,
@@ -479,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1FE81DC1E891411005F81E0 /* CollectionViewCell.swift in Sources */,
 				E1F2EF901E2E814700A7DF56 /* ViewController.swift in Sources */,
 				E1F2EF8E1E2E814700A7DF56 /* AppDelegate.swift in Sources */,
 				004B27FC1E3220EF0087EF1D /* ChatViewController.swift in Sources */,

@@ -10,9 +10,11 @@ import UIKit
 import ApiAI
 import MBProgressHUD
 import Speech
+import PubNub
 
-class ChatViewController: UIViewController, SFSpeechRecognizerDelegate {
-
+class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObjectEventListener {
+    
+    var client: PubNub!
     @IBOutlet var textField: UITextField? = nil
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var microphoneButton: UIButton!
@@ -21,9 +23,39 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate {
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
+    @IBAction func publish() {
+        var publishJSON: NSDictionary!
+        
+        publishJSON = ["text": textView.text]
+        
+        print("publishing..")
+        self.client.publish(publishJSON, toChannel: "speechRecog",
+                            compressed: false, withCompletion: { (status) in
+                                
+                                
+                                if !status.isError {
+                                    print("published")
+                                }
+                                else{
+                                    print(status.errorData)
+                                    /**
+                                     Handle message publish error. Check 'category' property to find
+                                     out possible reason because of which request did fail.
+                                     Review 'errorData' property (which has PNErrorData data type) of status
+                                     object to get additional information about issue.
+                                     
+                                     Request can be resent using: status.retry()
+                                     */
+                                }
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let configuration = PNConfiguration(publishKey: "pub-c-73cca4b9-e219-4f94-90fc-02dd8f018045", subscribeKey: "sub-c-383332aa-dcc0-11e6-b6b1-02ee2ddab7fe")
+        self.client = PubNub.client(with: configuration)
+
         microphoneButton.isEnabled = false  //2
         speechRecognizer?.delegate = self  //3
         SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
@@ -75,6 +107,8 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         request?.setMappedCompletionBlockSuccess({ (request, response) in
             let response = response as! AIResponse
+            print(response.result.action)
+            print(111)
 //            if response.result.action == "money" {
 //                if let parameters = response.result.parameters as? [String: AIResponseParameter]{
 //                    let amount = parameters["amout"]!.stringValue
@@ -89,7 +123,7 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate {
         })
         
         request?.setCompletionBlockSuccess({[unowned self] (request, response) -> Void in
-            print(response)
+//            print(response)
             
             hud.hide(animated: true)
             }, failure: { (request, error) -> Void in
@@ -164,7 +198,6 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate {
         textView.text = "Say something, I'm listening!"
         
     }
-    ;
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
         if available {
             microphoneButton.isEnabled = true
@@ -173,6 +206,8 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
     }
     
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+    }
     
     @IBAction func backBtn(_ sender: UIButton){
         self.navigationController?.popViewController(animated: true)
