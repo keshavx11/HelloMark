@@ -84,7 +84,7 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObject
     @IBAction func microphoneTapped(_ sender: AnyObject) {
         
         label.text = "Say something, I'm listening!"
-        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(stopRecord), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(stopRecord), userInfo: nil, repeats: false)
         microphoneButton.isEnabled = false
         startRecording()
         
@@ -95,7 +95,7 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObject
             label.text = "Press Record Button!"
             audioEngine.stop()
             recognitionRequest?.endAudio()
-            microphoneButton.isEnabled = false
+            microphoneButton.isEnabled = true
         }
     }
     
@@ -203,7 +203,7 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObject
             print("audioEngine couldn't start because of an error.")
         }
         
-        textView.text = "Say something, I'm listening!"
+        textView.text = ""
         
     }
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
