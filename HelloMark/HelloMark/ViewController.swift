@@ -10,10 +10,21 @@ import UIKit
 import PubNub
 
 
-class ViewController: UIViewController, PNObjectEventListener {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PNObjectEventListener {
     
     var client: PubNub!
     @IBOutlet var swtch: UISwitch!
+    var roomName: String!
+    @IBOutlet var tableView: UITableView!
+    var imageName = [UIImage(named: "bulb"),UIImage(named: "fan"),UIImage(named: "tv"),UIImage(named: "plug"),]
+    var hexArray = ["#26CE9D","#EF1136","#CE661F","#CEC023"]
+    var titleArray = ["Room Light","Fan","Television","Power Plug"]
+    var subTitleArray = ["Light up the room", "Get some air", "Watch tv", "Power up an appliance"]
+    
+
+    @IBAction func backBtn(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
+    }
 
     @IBAction func publish() {
         var publishJSON: NSDictionary!
@@ -57,7 +68,52 @@ class ViewController: UIViewController, PNObjectEventListener {
         self.client = PubNub.client(with: configuration)
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryCell
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+        cell.imgImage.image = imageName[indexPath.row]
+        cell.titleLabel?.text = titleArray[indexPath.row]
+        cell.subTitleLabel?.text = subTitleArray[indexPath.row]
+        cell.backgroundColor = self.hexStringToUIColor(hexArray[indexPath.row])
+//        if self.radioArray[indexPath.row]==0{
+//                cell.radioButton.setOn(false, animated: true)
+//            
+        return cell
+    }
+    
+    func hexStringToUIColor (_ hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            let index1 = cString.characters.index(cString.endIndex, offsetBy: -(cString.characters.count-1))
+            cString = cString.substring(from: index1)
+        }
+        
+        if (cString.characters.count != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

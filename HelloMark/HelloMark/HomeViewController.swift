@@ -61,28 +61,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         // Dispose of any resources that can be recreated.
     }
     
-    
-//    func details(_ currentPage: Int){
-//        if Int(currentPage) == 0{
-//            label.text = "Bedroom"
-//            textView.text = "AB"
-//            imageView.image = UIImage(named: "bedroom.jpg")
-//        }else if Int(currentPage) == 1{
-//            label.text = "Kitchen"
-//            textView.text = "AB"
-//            imageView.image = UIImage(named: "kitchen.jpg")
-//        }else if Int(currentPage) == 2{
-//            label.text = "Living Room"
-//            textView.text = "AB"
-//            imageView.image = UIImage(named: "livingroom.jpg")
-//        }else if Int(currentPage) == 3{
-//            label.text = "Washroom"
-//            textView.text = "AB"
-//            imageView.image = UIImage(named: "washroom.jpg")
-//        }
-//        
-//    }
-    
     @IBAction func next(){
     }
 }

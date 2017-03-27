@@ -15,7 +15,7 @@ import PubNub
 class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObjectEventListener {
     
     var client: PubNub!
-    @IBOutlet var textField: UITextField? = nil
+    @IBOutlet var label: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var microphoneButton: UIButton!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
@@ -82,16 +82,24 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObject
     }
     
     @IBAction func microphoneTapped(_ sender: AnyObject) {
+        
+        label.text = "Say something, I'm listening!"
+        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(stopRecord), userInfo: nil, repeats: false)
+        microphoneButton.isEnabled = false
+        startRecording()
+        
+    }
+    
+    func stopRecord(){
         if audioEngine.isRunning {
+            label.text = "Press Record Button!"
             audioEngine.stop()
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
-        } else {
-            startRecording()
         }
     }
     
-    @IBAction func sendText(_ sender: UIButton)
+  /*  @IBAction func sendText(_ sender: UIButton)
     {
         let hud = MBProgressHUD.showAdded(to: self.view.window!, animated: true)
         
@@ -131,7 +139,7 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObject
         });
         
         ApiAI.shared().enqueue(request)
-    }
+    }*/
     
     func startRecording() {
         
