@@ -13,6 +13,7 @@ import PubNub
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PNObjectEventListener {
     
     var client: PubNub!
+    @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var swtch: UISwitch!
     var roomName: String!
     @IBOutlet var tableView: UITableView!
@@ -25,21 +26,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func roomChoose(){
         if roomName == "bedroom"{
+            welcomeLabel.text = "Time to Relax!"
             hexArray = ["#26CE9D","#EF1136","#CE661F","#CEC023"]
             titleArray = ["Room Light","Fan","Television","Power Plug"]
             publishDevice = ["light","fan","television","plug"]
             subTitleArray = ["Light up the room", "Get some air", "Watch tv", "Power up an appliance"]
         }else if roomName == "kitchen"{
+            welcomeLabel.text = "Mmm! What's Cooking?"
             hexArray = ["#26CE9D","#EF1136","#CEC023"]
             titleArray = ["Room Light","Fan","Power Plug"]
             publishDevice = ["light","fan","plug"]
             subTitleArray = ["Light up the kitchen", "Get some air", "Power up microwave"]
         }else if roomName == "diningRoom"{
+            welcomeLabel.text = "Enjoy your meal!"
             hexArray = ["#26CE9D","#EF1136","#CE661F"]
             titleArray = ["Room Light","Fan","Television"]
             publishDevice = ["light","fan","television"]
             subTitleArray = ["Light up the room", "Get some air", "Watch tv"]
         }else{
+            welcomeLabel.text = "Here at your service!"
             hexArray = ["#26CE9D","#EF1136","#CE661F","#CEC023"]
             titleArray = ["Room Light","Fan","Television","Power Plug"]
             publishDevice = ["light","fan","television","plug"]
@@ -102,6 +107,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         self.roomChoose()
+        
         let configuration = PNConfiguration(publishKey: "pub-c-73cca4b9-e219-4f94-90fc-02dd8f018045", subscribeKey: "sub-c-383332aa-dcc0-11e6-b6b1-02ee2ddab7fe")
         self.client = PubNub.client(with: configuration)
         // Do any additional setup after loading the view, typically from a nib.

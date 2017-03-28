@@ -64,6 +64,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         
         let MainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let desCV = MainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        desCV.navigationItem.title = nameArray[indexPath.row]
         desCV.roomName = publishNameArray[indexPath.row]
         self.navigationController?.pushViewController(desCV, animated: true)
     }
