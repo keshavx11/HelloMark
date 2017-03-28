@@ -17,6 +17,14 @@ class CategoryCell: UITableViewCell {
     @IBOutlet var dotView: UIView!
     @IBOutlet var radioButton: UISwitch!
     
+    @IBAction func radio(_ sender: AnyObject) {
+        if radioButton.isOn == false{
+            self.state.text = "Off"
+        }else{
+            self.state.text = "On"
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

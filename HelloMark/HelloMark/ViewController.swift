@@ -17,25 +17,62 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var roomName: String!
     @IBOutlet var tableView: UITableView!
     var imageName = [UIImage(named: "bulb"),UIImage(named: "fan"),UIImage(named: "tv"),UIImage(named: "plug"),]
-    var hexArray = ["#26CE9D","#EF1136","#CE661F","#CEC023"]
-    var titleArray = ["Room Light","Fan","Television","Power Plug"]
-    var subTitleArray = ["Light up the room", "Get some air", "Watch tv", "Power up an appliance"]
+    var hexArray: [String]!
+    var titleArray: [String]!
+    var publishDevice: [String]!
+    var subTitleArray: [String]!
+    var radioArray = [0,0,0,0]
     
+    func roomChoose(){
+        if roomName == "bedroom"{
+            hexArray = ["#26CE9D","#EF1136","#CE661F","#CEC023"]
+            titleArray = ["Room Light","Fan","Television","Power Plug"]
+            publishDevice = ["light","fan","television","plug"]
+            subTitleArray = ["Light up the room", "Get some air", "Watch tv", "Power up an appliance"]
+        }else if roomName == "kitchen"{
+            hexArray = ["#26CE9D","#EF1136","#CEC023"]
+            titleArray = ["Room Light","Fan","Power Plug"]
+            publishDevice = ["light","fan","plug"]
+            subTitleArray = ["Light up the kitchen", "Get some air", "Power up microwave"]
+        }else if roomName == "diningRoom"{
+            hexArray = ["#26CE9D","#EF1136","#CE661F"]
+            titleArray = ["Room Light","Fan","Television"]
+            publishDevice = ["light","fan","television"]
+            subTitleArray = ["Light up the room", "Get some air", "Watch tv"]
+        }else{
+            hexArray = ["#26CE9D","#EF1136","#CE661F","#CEC023"]
+            titleArray = ["Room Light","Fan","Television","Power Plug"]
+            publishDevice = ["light","fan","television","plug"]
+            subTitleArray = ["Light up the room", "Get some air", "Watch tv", "Power up an appliance"]
+        }
+    }
 
     @IBAction func backBtn(_ sender: AnyObject) {
         self.navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func publish() {
+    @IBAction func radio(_ sender: AnyObject) {
+        if self.radioArray[sender.tag] == 1{
+           self.publish(isOn: false, device: sender.tag)
+           self.radioArray[sender.tag] = 0
+        }else{
+            self.publish(isOn: true, device: sender.tag)
+            self.radioArray[sender.tag] = 1
+        }
+//        UserDefaults.standard.set(self.radioArray as Array, forKey: "enabledCategories")
+//        UserDefaults.standard.synchronize()
+    }
+
+    func publish(isOn: Bool, device: Int) {
         var publishJSON: NSDictionary!
-        if swtch.isOn == true{
-        publishJSON = ["place": "bedroom",
-                                         "device": "light",
+        if isOn == true{
+        publishJSON = ["place": roomName,
+                                         "device": publishDevice[device],
                                          "state": true
         ]
         }else{
-        publishJSON = ["place": "bedroom",
-                                             "device": "light",
+        publishJSON = ["place": roomName,
+                                             "device": publishDevice[device],
                                              "state": false
             ]
         }
@@ -64,6 +101,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.roomChoose()
         let configuration = PNConfiguration(publishKey: "pub-c-73cca4b9-e219-4f94-90fc-02dd8f018045", subscribeKey: "sub-c-383332aa-dcc0-11e6-b6b1-02ee2ddab7fe")
         self.client = PubNub.client(with: configuration)
         // Do any additional setup after loading the view, typically from a nib.
@@ -84,9 +122,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.titleLabel?.text = titleArray[indexPath.row]
         cell.subTitleLabel?.text = subTitleArray[indexPath.row]
         cell.backgroundColor = self.hexStringToUIColor(hexArray[indexPath.row])
-//        if self.radioArray[indexPath.row]==0{
-//                cell.radioButton.setOn(false, animated: true)
-//            
+        
+        if self.radioArray[indexPath.row]==0{
+            cell.radioButton.setOn(false, animated: true)
+        }else{
+            cell.radioButton.setOn(true, animated: true)
+        }
+        cell.radioButton.isHidden = false
+        cell.selectionStyle = .none
+        cell.radioButton.tag = indexPath.row
         return cell
     }
     

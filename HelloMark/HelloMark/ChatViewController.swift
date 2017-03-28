@@ -92,6 +92,7 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObject
     
     func stopRecord(){
         if audioEngine.isRunning {
+            self.publish()
             label.text = "Press Record Button!"
             audioEngine.stop()
             recognitionRequest?.endAudio()
