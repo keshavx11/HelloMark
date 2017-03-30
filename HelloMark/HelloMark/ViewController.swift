@@ -73,12 +73,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if isOn == true{
         publishJSON = ["place": roomName,
                                          "device": publishDevice[device],
-                                         "state": true
+                                         "state": "on"
         ]
         }else{
         publishJSON = ["place": roomName,
                                              "device": publishDevice[device],
-                                             "state": false
+                                             "state": "off"
             ]
         }
         print("publishing..")
@@ -104,6 +104,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.roomChoose()
