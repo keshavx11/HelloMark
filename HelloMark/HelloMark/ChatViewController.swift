@@ -11,6 +11,7 @@ import ApiAI
 import MBProgressHUD
 import Speech
 import PubNub
+import AVFoundation
 
 class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObjectEventListener {
     
@@ -22,6 +23,7 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObject
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
+    let synth = AVSpeechSynthesizer()
     
     @IBAction func publish() {
         var publishJSON: NSDictionary!
@@ -92,6 +94,7 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObject
     
     func stopRecord(){
         if audioEngine.isRunning {
+            self.sendText(text: textView.text)
             self.publish()
             label.text = "Press Record Button!"
             audioEngine.stop()
@@ -100,39 +103,33 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObject
         }
     }
     
-  /*  @IBAction func sendText(_ sender: UIButton)
+    func sendText(text: String)
     {
         let hud = MBProgressHUD.showAdded(to: self.view.window!, animated: true)
         
-        self.textField?.resignFirstResponder()
-        
         let request = ApiAI.shared().textRequest()
         
-        if let text = self.textField?.text {
+        if text != ""{
             request?.query = [text]
         } else {
             request?.query = [""]
         }
         
-        request?.setMappedCompletionBlockSuccess({ (request, response) in
-            let response = response as! AIResponse
-            print(response.result.action)
-            print(111)
-//            if response.result.action == "money" {
-//                if let parameters = response.result.parameters as? [String: AIResponseParameter]{
-//                    let amount = parameters["amout"]!.stringValue
-//                    let currency = parameters["currency"]!.stringValue
-//                    let date = parameters["date"]!.dateValue
-//                    
-//                    print("Spended \(amount) of \(currency) on \(date)")
-//                }
-//            }
-        }, failure: { (request, error) in
-            // TODO: handle error
-        })
+//        request?.setMappedCompletionBlockSuccess({ (request, response) in
+//            let response = response as! AIResponse
+//            print(response.result.action)
+//        }, failure: { (request, error) in
+//            // TODO: handle error
+//        })
         
         request?.setCompletionBlockSuccess({[unowned self] (request, response) -> Void in
-//            print(response)
+            let response = response as! NSDictionary
+            let result = response.value(forKey: "result") as! NSDictionary
+            let fulfillment = result.value(forKey: "fulfillment") as! NSDictionary
+            let speech = fulfillment.value(forKey: "speech") as! String
+            print(speech)
+            
+            self.speak(speech, in: "en-US")
             
             hud.hide(animated: true)
             }, failure: { (request, error) -> Void in
@@ -140,7 +137,35 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObject
         });
         
         ApiAI.shared().enqueue(request)
-    }*/
+    }
+    
+    func speak(_ announcement: String, in language: String) {
+        print("speak announcement in language \(language) called")
+        prepareAudioSession()
+        let utterance = AVSpeechUtterance(string: announcement.lowercased())
+        utterance.voice = AVSpeechSynthesisVoice(language: language)
+        synth.speak(utterance)
+    }
+    
+    private func prepareAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient, with: .mixWithOthers)
+        } catch {
+            print(error)
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func stop() {
+        if synth.isSpeaking {
+            synth.stopSpeaking(at: .immediate)
+        }
+    }
     
     func startRecording() {
         
