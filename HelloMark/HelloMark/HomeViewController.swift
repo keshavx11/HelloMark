@@ -31,12 +31,35 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         if sender.tag == 0{
             self.lockButton.setBackgroundImage(UIImage(named: "locked"), for: UIControlState.normal)
             self.lockLabel.text = "Lock: On"
+            self.publish(isOn: true)
             lockButton.tag = 1
         }else{
             self.lockButton.setBackgroundImage(UIImage(named: "unlocked"), for: UIControlState.normal)
             self.lockLabel.text = "Lock: Off"
+            self.publish(isOn: false)
             lockButton.tag = 0
         }
+    }
+    
+    func publish(isOn: Bool) {
+        var publishJSON: NSDictionary!
+        if isOn == true{
+            publishJSON = ["isLockDownEnabled": 1]
+        }else{
+            publishJSON = ["isLockDownEnabled": 0]
+        }
+        print("publishing..")
+        self.client.publish(publishJSON, toChannel: "lockDown",
+                            compressed: false, withCompletion: { (status) in
+                                
+                                
+                                if !status.isError {
+                                    print("published")
+                                }
+                                else{
+                                    print(status.errorData)
+                                }
+        })
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
