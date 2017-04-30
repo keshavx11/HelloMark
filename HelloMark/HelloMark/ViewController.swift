@@ -150,7 +150,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
     }
     
-
+    func checkRadio(){
+        if roomName == "bedroom"{
+            radioArray[0] = historyArray[0]
+            radioArray[1] = historyArray[1]
+        }else if roomName == "kitchen"{
+            radioArray[0] = historyArray[2]
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -169,15 +176,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print(result?.data.messages.last)
                 let array = result?.data.messages.last as! [Int]
                 self.historyArray = array
+                self.checkRadio()
+                self.tableView.reloadData()
                 print(self.historyArray)
-                /**
-                 Handle downloaded history using:
-                 result.data.start - oldest message time stamp in response
-                 result.data.end - newest message time stamp in response
-                 result.data.messages - list of messages
-                 */
-            }
-            else {
+            }else{
                 
                 /**
                  Handle message history download error. Check 'category' property
@@ -207,6 +209,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let array = message.data.message as! [Int]
         print(array)
         historyArray = array
+        self.checkRadio()
+        self.tableView.reloadData()
+        print(self.historyArray)
     }
 
     
