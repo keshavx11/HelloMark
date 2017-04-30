@@ -1,9 +1,10 @@
 /**
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 #import "PNSubscribeStatus.h"
+#import "PNEnvelopeInformation.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -21,6 +22,14 @@ NS_ASSUME_NONNULL_BEGIN
  @since 4.3.0
  */
 @property (nonatomic, readonly) NSNumber *region;
+
+/**
+ @brief  Stores reference on delivered message enevelop object (data which appended by \b PubNub service 
+         mostly because of debug purposes).
+ 
+ @since 4.5.6
+ */
+@property (nonatomic, nullable, readonly) PNEnvelopeInformation *envelope;
 
 #pragma mark -
 

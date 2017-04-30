@@ -1,18 +1,18 @@
 /**
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 #import <Foundation/Foundation.h>
-#if __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
+#if TARGET_OS_IOS
     #import <UIKit/UIKit.h>
-#elif __MAC_OS_X_VERSION_MIN_REQUIRED
+#elif TARGET_OS_OSX
     #import <IOKit/IOKitLib.h>
     #include <sys/socket.h>
     #include <sys/sysctl.h>
     #include <net/if.h>
     #include <net/if_dl.h>
-#endif // __MAC_OS_X_VERSION_MIN_REQUIRED
+#endif // TARGET_OS_OSX
 #import "PNConfiguration.h"
 #import "PNConstants.h"
 #import "PNKeychain.h"
@@ -24,6 +24,8 @@
  @brief  Stores reference on key under which device ID will be stored persistently.
  */
 static NSString * const kPNConfigurationDeviceIDKey = @"PNConfigurationDeviceID";
+
+NSString * const kPNConfigurationUUIDKey = @"PNConfigurationUUID";
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -53,7 +55,18 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Misc
 
 /**
- @brief  Fetch unique device idenrifier from user defaults or generate new one.
+ @brief      Fetch unique user identifier from keychain or generate new one.
+ @discussion This value updates with every client configuration (if different from previous one). If user 
+             doesn't provide custom \c uuid during client configuration, client will generate and store new 
+             unique value which will be re-used during next client configuration (if not provided custom 
+             \c uuid).
+ 
+ @return Unique user identifier.
+ */
+- (NSString *)uniqueUserIdentifier;
+
+/**
+ @brief  Fetch unique device idenrifier from keychain or generate new one.
  
  @return Unique device identifier which depends on platform for which client has been compiled.
  
@@ -70,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable NSString *)generateUniqueDeviceIdentifier;
 
-#if __MAC_OS_X_VERSION_MIN_REQUIRED
+#if TARGET_OS_OSX
 /**
  @brief  Try to fetch device serial number information.
  
@@ -88,7 +101,7 @@ NS_ASSUME_NONNULL_BEGIN
  @since 4.0.2
  */
 - (nullable NSString *)macAddress;
-#endif
+#endif // TARGET_OS_OSX
 
 #pragma mark -
 
@@ -132,7 +145,7 @@ NS_ASSUME_NONNULL_END
         
         _deviceID = [[self uniqueDeviceIdentifier] copy];
         // In case if we client used from tests environment configuration should use specified
-        // device identifier.
+        // device and instance identifier.
         if (NSClassFromString(@"XCTestExpectation")) {
             
             _deviceID = [@"3650F534-FC54-4EE8-884C-EF1B83188BB7" copy];
@@ -140,17 +153,18 @@ NS_ASSUME_NONNULL_END
         _origin = [kPNDefaultOrigin copy];
         _publishKey = [publishKey copy];
         _subscribeKey = [subscribeKey copy];
-        _uuid = [[[NSUUID UUID] UUIDString] copy];
+        _uuid = [[self uniqueUserIdentifier] copy];
         _subscribeMaximumIdleTime = kPNDefaultSubscribeMaximumIdleTime;
         _nonSubscribeRequestTimeout = kPNDefaultNonSubscribeRequestTimeout;
         _TLSEnabled = kPNDefaultIsTLSEnabled;
         _heartbeatNotificationOptions = kPNDefaultHeartbeatNotificationOptions;
         _keepTimeTokenOnListChange = kPNDefaultShouldKeepTimeTokenOnListChange;
-        _restoreSubscription = kPNDefaultShouldRestoreSubscription;
         _catchUpOnSubscriptionRestore = kPNDefaultShouldTryCatchUpOnSubscriptionRestore;
-#if __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
+        _requestMessageCountThreshold = kPNDefaultRequestMessageCountThreshold;
+        _maximumMessagesCacheSize = kPNDefaultMaximumMessagesCacheSize;
+#if TARGET_OS_IOS
         _completeRequestsBeforeSuspension = kPNDefaultShouldCompleteRequestsBeforeSuspension;
-#endif // __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
+#endif // TARGET_OS_IOS
         _stripMobilePayload = kPNDefaultShouldStripMobilePayload;
     }
     
@@ -174,18 +188,40 @@ NS_ASSUME_NONNULL_END
     configuration.TLSEnabled = self.isTLSEnabled;
     configuration.heartbeatNotificationOptions = self.heartbeatNotificationOptions;
     configuration.keepTimeTokenOnListChange = self.shouldKeepTimeTokenOnListChange;
-    configuration.restoreSubscription = self.shouldRestoreSubscription;
     configuration.catchUpOnSubscriptionRestore = self.shouldTryCatchUpOnSubscriptionRestore;
-#if __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
+    configuration.applicationExtensionSharedGroupIdentifier = self.applicationExtensionSharedGroupIdentifier;
+    configuration.requestMessageCountThreshold = self.requestMessageCountThreshold;
+    configuration.maximumMessagesCacheSize = self.maximumMessagesCacheSize;
+#if TARGET_OS_IOS
     configuration.completeRequestsBeforeSuspension = self.shouldCompleteRequestsBeforeSuspension;
-#endif // __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
+#endif // TARGET_OS_IOS
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     configuration.stripMobilePayload = self.shouldStripMobilePayload;
+#pragma clang diagnostic pop
     
     return configuration;
 }
 
 
 #pragma mark - Misc
+
+- (NSString *)uniqueUserIdentifier {
+    
+    __block NSString *identifier = nil;
+    [PNKeychain valueForKey:kPNConfigurationUUIDKey withCompletionBlock:^(id value) {
+        
+        if (!value) {
+            
+            identifier = [@"pn-" stringByAppendingString:[[NSUUID UUID] UUIDString]];
+            [PNKeychain storeValue:identifier forKey:kPNConfigurationUUIDKey
+               withCompletionBlock:NULL];
+        }
+        else { identifier = value; }
+    }];
+    
+    return identifier;
+}
 
 - (NSString *)uniqueDeviceIdentifier {
     
@@ -207,16 +243,16 @@ NS_ASSUME_NONNULL_END
 - (NSString *)generateUniqueDeviceIdentifier {
     
     NSString *identifier = nil;
-#if __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
+#if TARGET_OS_IOS
     identifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-#elif __MAC_OS_X_VERSION_MIN_REQUIRED
+#elif TARGET_OS_OSX
     identifier = ([self serialNumber]?: [self macAddress]);
-#endif
+#endif // TARGET_OS_OSX
     
     return (identifier?: [[[NSUUID UUID] UUIDString] copy]);
 }
 
-#if __MAC_OS_X_VERSION_MIN_REQUIRED
+#if TARGET_OS_OSX
 - (NSString *)serialNumber {
     
     NSString *serialNumber = nil;
@@ -256,7 +292,7 @@ NS_ASSUME_NONNULL_END
     
     return macAddress;
 }
-#endif
+#endif // TARGET_OS_OSX
 
 #pragma mark -
 

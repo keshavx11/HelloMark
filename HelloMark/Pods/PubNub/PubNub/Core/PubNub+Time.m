@@ -1,9 +1,10 @@
 /**
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 #import "PubNub+Time.h"
+#import "PNAPICallBuilder+Private.h"
 #import "PNRequestParameters.h"
 #import "PubNub+CorePrivate.h"
 #import "PNStatus+Private.h"
@@ -14,6 +15,21 @@
 #pragma mark Interface implementation
 
 @implementation PubNub (Time)
+
+
+#pragma mark - API Builder support
+
+- (PNTimeAPICallBuilder *(^)(void))time {
+    
+    PNTimeAPICallBuilder *builder = nil;
+    builder = [PNTimeAPICallBuilder builderWithExecutionBlock:^(NSArray<NSString *> *flags, 
+                                                                NSDictionary *parameters) {
+                                         
+        [self timeWithCompletion:parameters[@"block"]];
+    }];
+    
+    return ^PNTimeAPICallBuilder *{ return builder; };
+}
 
 
 #pragma mark - Time token request

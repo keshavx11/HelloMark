@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 @interface PNPresenceDetailsData : PNSubscriberData
 
@@ -37,6 +37,39 @@ NS_ASSUME_NONNULL_BEGIN
  @since 4.0
  */
 @property (nonatomic, nullable, readonly, strong) NSString *uuid;
+
+/**
+ @brief  List of newly joined subscribers' UUID.
+ @note   Value set (if data available) only for \c interval presence events.
+ 
+ @return List of UUIDs for subscribers which joined channel since last interval or regular presence event has
+         been received. 
+ 
+ @since 4.5.16
+ */
+@property (nonatomic, nullable, readonly, strong) NSArray<NSString *> *join;
+
+/**
+ @brief  List of recently leaved subscribers' UUID.
+ @note   Value set (if data available) only for \c interval presence events.
+ 
+ @return List of UUIDs for subscribers which leaved channel since last interval or regular presence event has
+         been received. 
+ 
+ @since 4.5.16
+ */
+@property (nonatomic, nullable, readonly, strong) NSArray<NSString *> *leave;
+
+/**
+ @brief  List of recently UUID of subscribers which leaved by timeout.
+ @note   Value set (if data available) only for \c interval presence events.
+ 
+ @return List of UUIDs for subscribers which leaved channel by timeout since last interval or regular presence
+         event has been received. 
+ 
+ @since 4.5.16
+ */
+@property (nonatomic, nullable, readonly, strong) NSArray<NSString *> *timeout;
 
 /**
  @brief  Channel presence information.
@@ -68,7 +101,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 @interface PNPresenceEventData : PNSubscriberData
 
@@ -106,7 +139,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 @interface PNMessageData : PNSubscriberData
 
@@ -114,6 +147,14 @@ NS_ASSUME_NONNULL_BEGIN
 ///------------------------------------------------
 /// @name Information
 ///------------------------------------------------
+
+/**
+ @brief      Message sender identifier.
+ @discussion Unique identifier of configured remote client which sent this \c message.
+
+ @since 4.5.6
+*/
+@property (nonatomic, readonly, strong) NSString *publisher;
 
 /**
  @brief  Message which has been delivered through data object live feed.
@@ -135,7 +176,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 @interface PNMessageResult : PNResult
 
@@ -162,7 +203,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 @interface PNPresenceEventResult : PNResult
 

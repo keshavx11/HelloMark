@@ -56,7 +56,7 @@ class ChatViewController: UIViewController, SFSpeechRecognizerDelegate, PNObject
         super.viewDidLoad()
         
         let configuration = PNConfiguration(publishKey: "pub-c-73cca4b9-e219-4f94-90fc-02dd8f018045", subscribeKey: "sub-c-383332aa-dcc0-11e6-b6b1-02ee2ddab7fe")
-        self.client = PubNub.client(with: configuration)
+        self.client = PubNub.clientWithConfiguration(configuration)
 
         microphoneButton.isEnabled = false  //2
         speechRecognizer?.delegate = self  //3

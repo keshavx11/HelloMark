@@ -1,4 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "PNStateModificationAPICallBuilder.h"
+#import "PNStateAuditAPICallBuilder.h"
+#import "PNStateAPICallBuilder.h"
 #import "PubNub+Core.h"
 
 
@@ -10,40 +13,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark Types
-
-/**
- @brief State modification completion block.
- 
- @param status Reference on status instance which hold information about processing results.
- 
- @since 4.0
- */
-typedef void(^PNSetStateCompletionBlock)(PNClientStateUpdateStatus *status);
-
-/**
- @brief  Channel state audition completion block.
- 
- @param result Reference on result object which describe service response on channel state audit request.
- @param status Reference on status instance which hold information about processing results.
- 
- @since 4.0
- */
-typedef void(^PNChannelStateCompletionBlock)(PNChannelClientStateResult * _Nullable result,
-                                             PNErrorStatus * _Nullable status);
-
-/**
- @brief  Channel group state audition completion block.
- 
- @param result Reference on result object which describe service response on channel group state audit request.
- @param status Reference on status instance which hold information about processing results.
- 
- @since 4.0
- */
-typedef void(^PNChannelGroupStateCompletionBlock)(PNChannelGroupClientStateResult * _Nullable result,
-                                                  PNErrorStatus * _Nullable status);
-
-
 #pragma mark - API group interface
 
 /**
@@ -53,9 +22,22 @@ typedef void(^PNChannelGroupStateCompletionBlock)(PNChannelGroupClientStateResul
  
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 @interface PubNub (State)
+
+
+///------------------------------------------------
+/// @name API Builder support
+///------------------------------------------------
+
+/**
+ @brief      Stores reference on presence state API access \c builder construction block.
+ @discussion On block call return builder which allow to configure parameters for presence state API access.
+ 
+ @since 4.5.4
+ */
+@property (nonatomic, readonly, strong) PNStateAPICallBuilder *(^state)(void);
 
 
 ///------------------------------------------------
@@ -99,7 +81,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)setState:(nullable NSDictionary<NSString *, id> *)state forUUID:(NSString *)uuid 
-       onChannel:(NSString *)channel withCompletion:(nullable PNSetStateCompletionBlock)block;
+       onChannel:(NSString *)channel withCompletion:(nullable PNSetStateCompletionBlock)block NS_SWIFT_NAME(setState(_:forUUID:onChannel:withCompletion:));
 
 /**
  @brief      Modify state information for \c uuid on specified channel group.
@@ -138,7 +120,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)setState:(nullable NSDictionary<NSString *, id> *)state forUUID:(NSString *)uuid
-  onChannelGroup:(NSString *)group withCompletion:(nullable PNSetStateCompletionBlock)block;
+  onChannelGroup:(NSString *)group withCompletion:(nullable PNSetStateCompletionBlock)block NS_SWIFT_NAME(setState(_:forUUID:onChannelGroup:withCompletion:));
 
 
 ///------------------------------------------------
@@ -183,7 +165,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)stateForUUID:(NSString *)uuid onChannel:(NSString *)channel
-      withCompletion:(PNChannelStateCompletionBlock)block;
+      withCompletion:(PNChannelStateCompletionBlock)block NS_SWIFT_NAME(stateForUUID(_:onChannel:withCompletion:));
 
 /**
  @brief      Retrieve state information for \c uuid on specified channel group.
@@ -224,7 +206,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)stateForUUID:(NSString *)uuid onChannelGroup:(NSString *)group
-      withCompletion:(PNChannelGroupStateCompletionBlock)block;
+      withCompletion:(PNChannelGroupStateCompletionBlock)block NS_SWIFT_NAME(stateForUUID(_:onChannelGroup:withCompletion:));
 
 #pragma mark -
 

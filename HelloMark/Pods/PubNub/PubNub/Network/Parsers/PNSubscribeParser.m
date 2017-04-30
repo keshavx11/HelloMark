@@ -1,7 +1,7 @@
 /**
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 #import "PNSubscribeParser.h"
 #import "PNEnvelopeInformation.h"
@@ -140,6 +140,39 @@ struct PNEventEnvelopeStructure {
          @brief  Stores reference on unique client identifier which caused presence event triggering.
          */
         __unsafe_unretained NSString *uuid;
+        
+        /**
+         @brief      Stores reference on key under which stored difference in active subscribers (UUIDs) since 
+                     last presence event has been triggered.
+         @discussion Presence service after specified number of channel participants will send presence events
+                     at configured intervals and provide list of subscribers which joined since last interval 
+                     or regular presence event has been sent.
+         
+         @since 4.5.16
+         */
+        __unsafe_unretained NSString *joined;
+        
+        /**
+         @brief      Stores reference on key under which stored difference in active subscribers (UUIDs) since 
+                     last presence event has been triggered.
+         @discussion Presence service after specified number of channel participants will send presence events
+                     at configured intervals and provide list of subscribers which leaved since last interval 
+                     or regular presence event has been sent.
+         
+         @since 4.5.16
+         */
+        __unsafe_unretained NSString *leaved;
+        
+        /**
+         @brief      Stores reference on key under which stored difference in active subscribers (UUIDs) since 
+                     last presence event has been triggered.
+         @discussion Presence service after specified number of channel participants will send presence events
+                     at configured intervals and provide list of subscribers which leaved by timeout since 
+                     last interval or regular presence event has been sent.
+         
+         @since 4.5.16
+         */
+        __unsafe_unretained NSString *timeouted;
     } presence;
 } PNEventEnvelope = {
     .senderTimeToken = { .key = @"o" },
@@ -148,7 +181,8 @@ struct PNEventEnvelopeStructure {
     .subscriptionMatch = @"b",
     .payload = @"d",
     .presence = { .action = @"action", .data = @"data", .occupancy = @"occupancy",
-        .timestamp = @"timestamp", .uuid = @"uuid" }
+        .timestamp = @"timestamp", .uuid = @"uuid", .joined = @"join", .leaved = @"leave", 
+        .timeouted = @"timeout" }
 };
 
 
@@ -287,6 +321,8 @@ NS_ASSUME_NONNULL_END
     if ([PNChannel isPresenceObject:event[@"subscription"]]) {
         
         [event addEntriesFromDictionary:[self presenceFromData:data[PNEventEnvelope.payload]]];
+        event[@"subscription"] = [PNChannel channelForPresence:event[@"subscription"]];
+        event[@"channel"] = [PNChannel channelForPresence:event[@"channel"]];
     }
     else {
         
@@ -388,6 +424,24 @@ NS_ASSUME_NONNULL_END
     if (data[PNEventEnvelope.presence.data]) {
      
         presence[@"presence"][@"state"] = data[PNEventEnvelope.presence.data];
+    }
+    
+    if ([presence[@"presenceEvent"] isEqualToString:@"interval"]) {
+        
+        if (data[PNEventEnvelope.presence.joined]) {
+            
+            presence[@"presence"][@"join"] = data[PNEventEnvelope.presence.joined];
+        }
+        
+        if (data[PNEventEnvelope.presence.leaved]) {
+            
+            presence[@"presence"][@"leave"] = data[PNEventEnvelope.presence.leaved];
+        }
+        
+        if (data[PNEventEnvelope.presence.timeouted]) {
+            
+            presence[@"presence"][@"timeout"] = data[PNEventEnvelope.presence.timeouted];
+        }
     }
     
     return presence;

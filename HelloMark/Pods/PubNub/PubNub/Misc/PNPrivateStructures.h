@@ -3,7 +3,7 @@
  
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 #import "PNStructures.h"
 
@@ -12,15 +12,21 @@
 #define PNPrivateStructures_h
 
 /**
+ @brief  Stores reference on key under which unique user identifier will be stored persistently.
+ */
+extern NSString * const kPNConfigurationUUIDKey;
+
+/**
  @brief  Helper to stringify operation type in result and status objects.
 
  @since 4.0
  */
-static NSString * const PNOperationTypeStrings[22] = {
+static NSString * const PNOperationTypeStrings[23] = {
     [PNSubscribeOperation] = @"Subscribe",
     [PNUnsubscribeOperation] = @"Unsubscribe",
     [PNPublishOperation] = @"Publish",
     [PNHistoryOperation] = @"History",
+    [PNHistoryForChannelsOperation] = @"History for Channels",
     [PNWhereNowOperation] = @"Where Now",
     [PNHereNowGlobalOperation] = @"Global Here Now",
     [PNHereNowForChannelOperation] = @"Here Now for Channel",
@@ -41,8 +47,9 @@ static NSString * const PNOperationTypeStrings[22] = {
     [PNTimeOperation] = @"Time",
 };
 
-static NSString * const PNOperationResultClasses[22] = {
+static NSString * const PNOperationResultClasses[23] = {
     [PNHistoryOperation] = @"PNHistoryResult",
+    [PNHistoryForChannelsOperation] = @"PNHistoryResult",
     [PNWhereNowOperation] = @"PNPresenceWhereNowResult",
     [PNHereNowGlobalOperation] = @"PNPresenceGlobalHereNowResult",
     [PNHereNowForChannelOperation] = @"PNPresenceChannelHereNowResult",
@@ -55,11 +62,12 @@ static NSString * const PNOperationResultClasses[22] = {
     [PNTimeOperation] = @"PNTimeResult",
 };
 
-static NSString * const PNOperationStatusClasses[22] = {
+static NSString * const PNOperationStatusClasses[23] = {
     [PNSubscribeOperation] = @"PNSubscribeStatus",
     [PNUnsubscribeOperation] = @"PNAcknowledgmentStatus",
     [PNPublishOperation] = @"PNPublishStatus",
     [PNHistoryOperation] = @"PNErrorStatus",
+    [PNHistoryForChannelsOperation] = @"PNErrorStatus",
     [PNWhereNowOperation] = @"PNErrorStatus",
     [PNHereNowGlobalOperation] = @"PNErrorStatus",
     [PNHereNowForChannelOperation] = @"PNErrorStatus",
@@ -85,12 +93,13 @@ static NSString * const PNOperationStatusClasses[22] = {
 
  @since 4.0
  */
-static NSString * const PNStatusCategoryStrings[16] = {
+static NSString * const PNStatusCategoryStrings[17] = {
     [PNUnknownCategory] = @"Unknown",
     [PNAcknowledgmentCategory] = @"Acknowledgment",
     [PNAccessDeniedCategory] = @"Access Denied",
     [PNTimeoutCategory] = @"Timeout",
     [PNNetworkIssuesCategory] = @"Network Issues",
+    [PNRequestMessageCountExceededCategory] = @"Message Count Exceeded",
     [PNConnectedCategory] = @"Connected",
     [PNReconnectedCategory] = @"Reconnected",
     [PNDisconnectedCategory] = @"Expected Disconnect",

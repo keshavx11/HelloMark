@@ -1,16 +1,16 @@
 PODS:
-  - ApiAI/Core (0.5.5)
-  - ApiAI/ResponseMapping (0.5.5):
+  - ApiAI/Core (0.7.0)
+  - ApiAI/ResponseMapping (0.7.0):
     - ApiAI/Core
-  - ApiAI/UIKit (0.5.5):
+  - ApiAI/UIKit (0.7.0):
     - ApiAI/Core
     - ApiAI/VoiceRequest
-  - ApiAI/VoiceRequest (0.5.5):
+  - ApiAI/VoiceRequest (0.7.0):
     - ApiAI/Core
   - MBProgressHUD (1.0.0)
-  - PubNub (4.5.2):
-    - PubNub/Core (= 4.5.2)
-  - PubNub/Core (4.5.2)
+  - PubNub (4.6.1):
+    - PubNub/Core (= 4.6.1)
+  - PubNub/Core (4.6.1)
 
 DEPENDENCIES:
   - ApiAI/Core
@@ -21,9 +21,9 @@ DEPENDENCIES:
   - PubNub
 
 SPEC CHECKSUMS:
-  ApiAI: f812efe6bff8b6d980b15ffd40c3e74ae8f467c4
+  ApiAI: 25f763ddd88139dc5fe6794a905300244190d168
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  PubNub: 1b6da1bb6a971214ab9fb42e40aed23f77438d26
+  PubNub: 408ba6402a9c712418da738adda12ccc339cbb1e
 
 PODFILE CHECKSUM: 91386cadd280d7eb3f11db0c153253cdc3518475
 

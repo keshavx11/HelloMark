@@ -10,7 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @author Sergey Mamontov
  @since 4.5.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 @interface PNLLogger : NSObject
 
@@ -146,15 +146,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)loggerWithIdentifier:(NSString *)identifier directory:(nullable NSString *)logsDirectoryPath 
                         logExtension:(nullable NSString *)extension;
-
-/**
- @brief  Set whether \c logger should process messages which is sent to it or not.
- 
- @param isLoggingEnabled \c YES in case if logger should process data which is sent to it.
- 
- @since 4.5.0
- */
-- (void)enabled:(BOOL)isLoggingEnabled;
 
 /**
  @brief      Enable particular logging level.

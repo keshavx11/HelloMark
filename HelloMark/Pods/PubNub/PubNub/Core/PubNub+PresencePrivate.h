@@ -1,7 +1,7 @@
 /**
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 #import "PubNub+Presence.h"
 
@@ -11,6 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Private interface declaration
 
 @interface PubNub (PresencePrivate)
+
+
+///------------------------------------------------
+/// @name Heartbeat support
+///------------------------------------------------
 
 /**
  @brief      Issue heartbeat request to \b PubNub network.

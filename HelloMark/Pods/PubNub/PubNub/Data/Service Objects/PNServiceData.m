@@ -1,7 +1,7 @@
 /**
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 #import "PNServiceData+Private.h"
 
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Information
 
-@property (nonatomic, copy) NSDictionary<NSString *, id> *serviceData;
+@property (nonatomic, strong) NSDictionary<NSString *, id> *serviceData;
 
 
 #pragma mark - Initialization and Configuration
@@ -58,6 +58,7 @@ NS_ASSUME_NONNULL_END
     if ((self = [super init])) {
         
         self.serviceData = (response?: @{});
+        if (![response isKindOfClass:[NSDictionary class]]) { self.serviceData = @{@"information": response}; }
     }
     
     return self;

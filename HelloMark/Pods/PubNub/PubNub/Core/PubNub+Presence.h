@@ -1,4 +1,9 @@
 #import <Foundation/Foundation.h>
+#import "PNPresenceChannelGroupHereNowAPICallBuilder.h"
+#import "PNPresenceChannelHereNowAPICallBuilder.h"
+#import "PNPresenceWhereNowAPICallBuilder.h"
+#import "PNPresenceHereNowAPICallBuilder.h"
+#import "PNPresenceAPICallBuilder.h"
 #import "PubNub+Core.h"
 
 
@@ -10,53 +15,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - Types
-
-/**
- @brief  Here now completion block.
- 
- @param result Reference on result object which describe service response on here now request.
- @param status Reference on status instance which hold information about processing results.
- 
- @since 4.0
- */
-typedef void(^PNHereNowCompletionBlock)(PNPresenceChannelHereNowResult * _Nullable result,
-                                        PNErrorStatus * _Nullable status);
-
-/**
- @brief  Global here now completion block.
- 
- @param result Reference on result object which describe service response on here now request.
- @param status Reference on status instance which hold information about processing results.
- 
- @since 4.0
- */
-typedef void(^PNGlobalHereNowCompletionBlock)(PNPresenceGlobalHereNowResult * _Nullable result,
-                                              PNErrorStatus * _Nullable status);
-
-/**
- @brief  Channel group here now completion block.
- 
- @param result Reference on result object which describe service response on here now request.
- @param status Reference on status instance which hold information about processing results.
- 
- @since 4.0
- */
-typedef void(^PNChannelGroupHereNowCompletionBlock)(PNPresenceChannelGroupHereNowResult * _Nullable result,
-                                                    PNErrorStatus * _Nullable status);
-
-/**
- @brief  UUID where now completion block.
- 
- @param result Reference on result object which describe service response on where now request.
- @param status Reference on status instance which hold information about processing results.
- 
- @since 4.0
- */
-typedef void(^PNWhereNowCompletionBlock)(PNPresenceWhereNowResult * _Nullable result, 
-                                         PNErrorStatus * _Nullable status);
-
-
 #pragma mark - API group interface
 /**
  @brief      \b PubNub client core class extension to provide access to 'presence' API group.
@@ -66,9 +24,22 @@ typedef void(^PNWhereNowCompletionBlock)(PNPresenceWhereNowResult * _Nullable re
  
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 @interface PubNub (Presence)
+
+
+///------------------------------------------------
+/// @name API Builder support
+///------------------------------------------------
+
+/**
+ @brief      Stores reference on presence API access \c builder construction block.
+ @discussion On block call return builder which allow to configure parameters for presence API access.
+ 
+ @since 4.5.4
+ */
+@property (nonatomic, readonly, strong) PNPresenceAPICallBuilder *(^presence)(void);
 
 
 ///------------------------------------------------
@@ -119,7 +90,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)hereNowWithCompletion:(PNGlobalHereNowCompletionBlock)block;
+- (void)hereNowWithCompletion:(PNGlobalHereNowCompletionBlock)block NS_SWIFT_NAME(hereNowWithCompletion(_:));
 
 /**
  @brief      Request information about subscribers on all remote data objects live feeds.
@@ -168,7 +139,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)hereNowWithVerbosity:(PNHereNowVerbosityLevel)level completion:(PNGlobalHereNowCompletionBlock)block;
+- (void)hereNowWithVerbosity:(PNHereNowVerbosityLevel)level completion:(PNGlobalHereNowCompletionBlock)block NS_SWIFT_NAME(hereNowWithVerbosity(_:completion:));
 
 
 ///------------------------------------------------
@@ -216,7 +187,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)hereNowForChannel:(NSString *)channel withCompletion:(PNHereNowCompletionBlock)block;
+- (void)hereNowForChannel:(NSString *)channel withCompletion:(PNHereNowCompletionBlock)block NS_SWIFT_NAME(hereNowForChannel(_:withCompletion:));
 
 /**
  @brief      Request information about subscribers on specific channel live feeds.
@@ -262,7 +233,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)hereNowForChannel:(NSString *)channel withVerbosity:(PNHereNowVerbosityLevel)level
-               completion:(PNHereNowCompletionBlock)block;
+               completion:(PNHereNowCompletionBlock)block NS_SWIFT_NAME(hereNowForChannel(_:withVerbosity:completion:));
 
 
 ///------------------------------------------------
@@ -314,7 +285,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)hereNowForChannelGroup:(NSString *)group withCompletion:(PNChannelGroupHereNowCompletionBlock)block;
+- (void)hereNowForChannelGroup:(NSString *)group withCompletion:(PNChannelGroupHereNowCompletionBlock)block NS_SWIFT_NAME(hereNowForChannelGroup(_:withCompletion:));
 
 /**
  @brief      Request information about subscribers on specific channel group live feeds.
@@ -364,7 +335,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  @since 4.0
  */
 - (void)hereNowForChannelGroup:(NSString *)group withVerbosity:(PNHereNowVerbosityLevel)level
-                    completion:(PNChannelGroupHereNowCompletionBlock)block;
+                    completion:(PNChannelGroupHereNowCompletionBlock)block NS_SWIFT_NAME(hereNowForChannelGroup(_:withVerbosity:completion:));
 
 
 ///------------------------------------------------
@@ -406,7 +377,7 @@ self.client = [PubNub clientWithConfiguration:configuration];
  
  @since 4.0
  */
-- (void)whereNowUUID:(NSString *)uuid withCompletion:(PNWhereNowCompletionBlock)block;
+- (void)whereNowUUID:(NSString *)uuid withCompletion:(PNWhereNowCompletionBlock)block NS_SWIFT_NAME(whereNowUUID(_:withCompletion:));
 
 #pragma mark -
 

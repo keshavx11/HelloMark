@@ -1,9 +1,10 @@
 /**
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 #import "PNSubscriberResults.h"
+#import "PNSubscribeStatus+Private.h"
 #import "PNServiceData+Private.h"
 #import "PNResult+Private.h"
 
@@ -23,6 +24,21 @@
 - (NSString *)uuid {
     
     return self.serviceData[@"uuid"];
+}
+
+- (NSString *)join {
+    
+    return self.serviceData[@"join"];
+}
+
+- (NSString *)leave {
+    
+    return self.serviceData[@"leave"];
+}
+
+- (NSString *)timeout {
+    
+    return self.serviceData[@"timeout"];
 }
 
 - (NSNumber *)occupancy {
@@ -70,6 +86,11 @@
 
 
 #pragma mark - Information
+
+- (NSString *)publisher {
+    
+    return self.envelope.senderIdentifier;
+}
 
 - (id)message {
     

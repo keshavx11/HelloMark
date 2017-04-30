@@ -3,7 +3,7 @@
 
  @author Sergey Mamontov
  @since 4.0
- @copyright © 2009-2016 PubNub, Inc.
+ @copyright © 2009-2017 PubNub, Inc.
  */
 #import <Foundation/Foundation.h>
 #import "PNStructures.h"
@@ -15,10 +15,10 @@
 #pragma mark General information constants
 
 // Stores client library version number
-static NSString * const kPNLibraryVersion = @"4.5.2";
+static NSString * const kPNLibraryVersion = @"4.6.1";
 
 // Stores information about SDK codebase
-static NSString * const kPNCommit = @"2c8d262e86b400142310a6c37db80f71dc41e497";
+static NSString * const kPNCommit = @"9087df2275ed28971c96694afe7f229678c7f8df";
 
 /**
  @brief  Stores reference on unique identifier which is used to identify \b PubNub client among other 
@@ -28,18 +28,20 @@ static NSString * const kPNCommit = @"2c8d262e86b400142310a6c37db80f71dc41e497";
  */
 static NSString * const kPNClientIdentifier = @"com.pubnub.pubnub-objc";
 
-#if TARGET_OS_WATCH
-    static NSString * const kPNClientName = @"ObjC-watchOS";
-#elif __IPHONE_OS_VERSION_MIN_REQUIRED
+#if TARGET_OS_IOS
     static NSString * const kPNClientName = @"ObjC-iOS";
-#elif __MAC_OS_X_VERSION_MIN_REQUIRED
-    static NSString * const kPNClientName = @"ObjC-MacOS";
-#endif // __MAC_OS_X_VERSION_MIN_REQUIRED
+#elif TARGET_OS_WATCH
+    static NSString * const kPNClientName = @"ObjC-watchOS";
+#elif TARGET_OS_TV
+    static NSString * const kPNClientName = @"ObjC-tvOS";
+#elif TARGET_OS_OSX
+    static NSString * const kPNClientName = @"ObjC-macOS";
+#endif // TARGET_OS_OSX
 
 
 #pragma mark - Default client configuration
 
-static NSString * const kPNDefaultOrigin = @"pubsub.pubnub.com";
+static NSString * const kPNDefaultOrigin = @"ps.pndsn.com";
 
 static NSTimeInterval const kPNDefaultSubscribeMaximumIdleTime = 310.0f;
 static NSTimeInterval const kPNDefaultNonSubscribeRequestTimeout = 10.0f;
@@ -47,11 +49,12 @@ static NSTimeInterval const kPNDefaultNonSubscribeRequestTimeout = 10.0f;
 static BOOL const kPNDefaultIsTLSEnabled = YES;
 static PNHeartbeatNotificationOptions const kPNDefaultHeartbeatNotificationOptions = PNHeartbeatNotifyFailure;
 static BOOL const kPNDefaultShouldKeepTimeTokenOnListChange = YES;
-static BOOL const kPNDefaultShouldRestoreSubscription = YES;
 static BOOL const kPNDefaultShouldTryCatchUpOnSubscriptionRestore = YES;
-#if __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
+static BOOL const kPNDefaultRequestMessageCountThreshold = 0;
+static BOOL const kPNDefaultMaximumMessagesCacheSize = 100;
+#if TARGET_OS_IOS
 static BOOL const kPNDefaultShouldCompleteRequestsBeforeSuspension = YES;
-#endif // __IPHONE_OS_VERSION_MIN_REQUIRED && !TARGET_OS_WATCH
+#endif // TARGET_OS_IOS
 static BOOL const kPNDefaultShouldStripMobilePayload = YES;
 
 #endif // PNConstants_h
