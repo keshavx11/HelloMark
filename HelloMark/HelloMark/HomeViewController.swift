@@ -133,8 +133,10 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             alertLabel.text = (message.data.message as! String) + "is at the door"
         }else if message.data.channel == "lockDown"{
             let dict = message.data.message as! NSDictionary
-            if (dict.value(forKey: "intruderDetected") as! Int) == 1{
-                alertLabel.text = "Intruder Alert"
+            if (dict.value(forKey: "intruderDetected") != nil){
+                if (dict.value(forKey: "intruderDetected") as! Int) == 1{
+                    alertLabel.text = "Intruder Alert"
+                }
             }
         }
     }
