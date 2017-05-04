@@ -208,7 +208,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZUh-zO-5vY">
-                                <rect key="frame" x="2" y="117" width="371" height="486"/>
+                                <rect key="frame" x="2" y="117" width="371" height="408"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="cfu-ay-gX0">
                                     <size key="itemSize" width="180" height="180"/>
@@ -261,14 +261,26 @@
                                     <outlet property="delegate" destination="APR-Eu-Ghx" id="c7q-Rx-HgH"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have a nice day!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oo-TK-WXL">
+                                <rect key="frame" x="0.0" y="562" width="375" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="Hda-Ti-805"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="CsY-Zs-R5Q" firstAttribute="top" secondItem="1oo-TK-WXL" secondAttribute="bottom" constant="8" id="8uh-Dt-gb6"/>
                             <constraint firstItem="wYP-1w-qzQ" firstAttribute="leading" secondItem="s2v-l6-ZcM" secondAttribute="leading" constant="3" id="DBc-93-I2r"/>
+                            <constraint firstAttribute="trailing" secondItem="1oo-TK-WXL" secondAttribute="trailing" id="DyM-v5-Ga4"/>
+                            <constraint firstItem="1oo-TK-WXL" firstAttribute="leading" secondItem="s2v-l6-ZcM" secondAttribute="leading" id="Km0-5K-bK9"/>
+                            <constraint firstItem="CsY-Zs-R5Q" firstAttribute="top" secondItem="ZUh-zO-5vY" secondAttribute="bottom" constant="78" id="NRm-cW-Sur"/>
                             <constraint firstAttribute="trailing" secondItem="wYP-1w-qzQ" secondAttribute="trailing" constant="3" id="ROO-rv-TIG"/>
                             <constraint firstAttribute="trailing" secondItem="ZUh-zO-5vY" secondAttribute="trailing" constant="2" id="hCo-hL-oTy"/>
                             <constraint firstItem="ZUh-zO-5vY" firstAttribute="top" secondItem="wYP-1w-qzQ" secondAttribute="bottom" constant="8" id="jZz-zY-nes"/>
-                            <constraint firstItem="CsY-Zs-R5Q" firstAttribute="top" secondItem="ZUh-zO-5vY" secondAttribute="bottom" id="nHG-i2-Ccr"/>
                             <constraint firstItem="ZUh-zO-5vY" firstAttribute="leading" secondItem="s2v-l6-ZcM" secondAttribute="leading" constant="2" id="oLR-Os-0EN"/>
                             <constraint firstItem="wYP-1w-qzQ" firstAttribute="top" secondItem="v2y-gw-tCz" secondAttribute="bottom" constant="5" id="wer-Q4-wp3"/>
                         </constraints>
@@ -285,6 +297,7 @@
                     <connections>
                         <outlet property="actInd1" destination="ssJ-tG-FTj" id="Pyi-jm-CVV"/>
                         <outlet property="actInd2" destination="mrj-7g-Yby" id="fQU-ng-det"/>
+                        <outlet property="alertLabel" destination="1oo-TK-WXL" id="1kM-Td-ANK"/>
                         <outlet property="collectionView" destination="ZUh-zO-5vY" id="wRN-VW-3ic"/>
                         <outlet property="humidityLabel" destination="pRh-MM-6j8" id="LQg-Bh-MJa"/>
                         <outlet property="lockButton" destination="FGI-1x-l0t" id="BMZ-IJ-Z6x"/>

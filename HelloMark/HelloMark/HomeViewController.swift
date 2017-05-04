@@ -14,12 +14,12 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var tempLabel: UILabel!
     @IBOutlet var humidityLabel: UILabel!
+    @IBOutlet var alertLabel: UILabel!
     @IBOutlet var lockLabel: UILabel!
     var isReady: Bool = false
     @IBOutlet var lockButton: UIButton!
     @IBOutlet var actInd1: UIActivityIndicatorView!
     @IBOutlet var actInd2: UIActivityIndicatorView!
-    var historyArray = [0,0,0,0]
     
     var imageName = [UIImage(named: "bedroom"),UIImage(named: "kitchen"),UIImage(named: "dining"),UIImage(named: "living"),]
     
@@ -33,13 +33,11 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             self.lockButton.setBackgroundImage(UIImage(named: "locked"), for: UIControlState.normal)
             self.lockLabel.text = "Lock: On"
             self.publish(isOn: true)
-            historyArray[3] = 1
             lockButton.tag = 1
         }else{
             self.lockButton.setBackgroundImage(UIImage(named: "unlocked"), for: UIControlState.normal)
             self.lockLabel.text = "Lock: Off"
             self.publish(isOn: false)
-            historyArray[3] = 1
             lockButton.tag = 0
         }
     }
@@ -61,25 +59,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                                 }
                                 else{
                                     print(status.errorData)
-                                }
-        })
-        self.client.publish(historyArray, toChannel: "status",
-                            compressed: false, withCompletion: { (status) in
-                                
-                                
-                                if !status.isError {
-                                    print("published")
-                                }
-                                else{
-                                    print(status.errorData)
-                                    /**
-                                     Handle message publish error. Check 'category' property to find
-                                     out possible reason because of which request did fail.
-                                     Review 'errorData' property (which has PNErrorData data type) of status
-                                     object to get additional information about issue.
-                                     
-                                     Request can be resent using: status.retry()
-                                     */
                                 }
         })
     }
@@ -122,7 +101,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         let configuration = PNConfiguration(publishKey: "pub-c-73cca4b9-e219-4f94-90fc-02dd8f018045", subscribeKey: "sub-c-383332aa-dcc0-11e6-b6b1-02ee2ddab7fe")
         self.client = PubNub.clientWithConfiguration(configuration)
         self.client.addListener(self as PNObjectEventListener)
-        self.client.subscribeToChannels(["Temp"], withPresence: false)
+        self.client.subscribeToChannels(["Temp", "faceRecog", "lockDown"], withPresence: false)
         
         self.lockButton.layer.cornerRadius = 4
         self.lockButton.clipsToBounds = true
@@ -140,15 +119,24 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         
 //        print("Received message: \(message.data.message) on channel \(message.data.channel) " +
 //            "at \(message.data.timetoken)")
-        let dict = message.data.message as! NSDictionary
-        let Temp = dict.value(forKey: "Temp")!
-        let Hum = dict.value(forKey: "Hum")!
-        tempLabel.text = "\(Temp)" + "°C"
-        humidityLabel.text = "\(Hum)" + "%"
-        actInd1.stopAnimating()
-        actInd2.stopAnimating()
-        tempLabel.isHidden = false
-        humidityLabel.isHidden = false
+        if message.data.channel == "Temp"{
+            let dict = message.data.message as! NSDictionary
+            let Temp = dict.value(forKey: "Temp")!
+            let Hum = dict.value(forKey: "Hum")!
+            tempLabel.text = "\(Temp)" + "°C"
+            humidityLabel.text = "\(Hum)" + "%"
+            actInd1.stopAnimating()
+            actInd2.stopAnimating()
+            tempLabel.isHidden = false
+            humidityLabel.isHidden = false
+        }else if message.data.channel == "faceRecog"{
+            alertLabel.text = (message.data.message as! String) + "is at the door"
+        }else if message.data.channel == "lockDown"{
+            let dict = message.data.message as! NSDictionary
+            if (dict.value(forKey: "intruderDetected") as! Int) == 1{
+                alertLabel.text = "Intruder Alert"
+            }
+        }
     }
     
     func client(_ client: PubNub, didReceive status: PNStatus) {
