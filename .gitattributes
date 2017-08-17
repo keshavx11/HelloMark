@@ -11,4 +11,4 @@
 .gitignore text
 *.md text
 
-pods/* linguist-vendored
+HelloMark/Pods/* linguist-vendored
