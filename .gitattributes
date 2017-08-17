@@ -11,4 +11,4 @@
 .gitignore text
 *.md text
 
-static/* linguist-vendored
+pods/* linguist-vendored
